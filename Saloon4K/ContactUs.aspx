@@ -12,6 +12,7 @@
             text-align: left !important;
             color: #D8275D !important;
         }
+        
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
@@ -25,7 +26,7 @@
                 <p>
                     
                     Lorem ipsum dolor sit amet, consectetur<br>
-                    adipiscing elit. Nam ullamcorper lacinia . Wakee
+                    adipiscing elit. Nam ullamcorper lacinia . Wakeel Bravado
                 </p>
                 <h4 class="phone">
                     TELEPHONE</h4>
