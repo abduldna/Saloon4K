@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Saloon4KModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Saloon4KModelStoreContainer">
+    <EntitySet Name="AddsManagement" EntityType="Saloon4KModel.Store.AddsManagement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Categories" EntityType="Saloon4KModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Deals" EntityType="Saloon4KModel.Store.Deals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="event" EntityType="Saloon4KModel.Store.event" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IntermediateUsers" EntityType="Saloon4KModel.Store.IntermediateUsers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MobileAddsManagement" EntityType="Saloon4KModel.Store.MobileAddsManagement" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Newsletters" EntityType="Saloon4KModel.Store.Newsletters" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permissions" EntityType="Saloon4KModel.Store.Permissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Points" EntityType="Saloon4KModel.Store.Points" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaloonCategories" EntityType="Saloon4KModel.Store.SaloonCategories" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Saloons" EntityType="Saloon4KModel.Store.Saloons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SystemManagers" EntityType="Saloon4KModel.Store.SystemManagers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserBookedInterestedSaloons" EntityType="Saloon4KModel.Store.UserBookedInterestedSaloons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserFavouriteAndBookedDeals" EntityType="Saloon4KModel.Store.UserFavouriteAndBookedDeals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserMouseTrackings" EntityType="Saloon4KModel.Store.UserMouseTrackings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Saloon4KModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserVouchers" EntityType="Saloon4KModel.Store.UserVouchers" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="AddsManagement">
+    <Key>
+      <PropertyRef Name="AddsManagementId" />
+    </Key>
+    <Property Name="AddsManagementId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Image1" Type="varchar" MaxLength="50" />
+    <Property Name="Position1" Type="varchar" MaxLength="50" />
+    <Property Name="Alignment1" Type="varchar" MaxLength="50" />
+    <Property Name="Image2" Type="varchar" MaxLength="50" />
+    <Property Name="Position2" Type="varchar" MaxLength="50" />
+    <Property Name="Alignment2" Type="varchar" MaxLength="50" />
+    <Property Name="Image3" Type="varchar" MaxLength="50" />
+    <Property Name="Position3" Type="varchar" MaxLength="50" />
+    <Property Name="Alignment3" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="AddStatus" Type="varchar" MaxLength="50" />
+    <Property Name="PageName" Type="varchar" MaxLength="50" />
+    <Property Name="IsPublic" Type="bit" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Image" Type="varchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Deals">
+    <Key>
+      <PropertyRef Name="DealId" />
+    </Key>
+    <Property Name="DealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="SaloonId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Image" Type="varchar" MaxLength="250" />
+    <Property Name="IsDealOfTheDay" Type="bit" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="AreaOfDeal" Type="varchar" MaxLength="250" />
+    <Property Name="Latitude" Type="varchar" MaxLength="50" />
+    <Property Name="Longitude" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="ActualPrice" Type="decimal" />
+    <Property Name="DiscountedPrice" Type="decimal" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AcceptVouchers" Type="bit" />
+  </EntityType>
+  <EntityType Name="event">
+    <Key>
+      <PropertyRef Name="event_id" />
+    </Key>
+    <Property Name="event_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="varchar" MaxLength="100" />
+    <Property Name="description" Type="varchar" MaxLength="200" />
+    <Property Name="event_start" Type="datetime" />
+    <Property Name="event_end" Type="datetime" />
+  </EntityType>
+  <EntityType Name="IntermediateUsers">
+    <Key>
+      <PropertyRef Name="IntermediateUserId" />
+    </Key>
+    <Property Name="IntermediateUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FacebookId" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Firstname" Type="varchar" MaxLength="50" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" />
+    <Property Name="Latitude" Type="varchar" MaxLength="50" />
+    <Property Name="Longitude" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Facebook" Type="varchar" MaxLength="250" />
+    <Property Name="About" Type="text" />
+    <Property Name="Avatar" Type="varchar" MaxLength="250" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MobileAddsManagement">
+    <Key>
+      <PropertyRef Name="MobileAddId" />
+    </Key>
+    <Property Name="MobileAddId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="AddFor" Type="varchar" MaxLength="50" />
+    <Property Name="Image1" Type="varchar" MaxLength="50" />
+    <Property Name="Image2" Type="varchar" MaxLength="50" />
+    <Property Name="Image3" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="AddStatus" Type="varchar" MaxLength="50" />
+    <Property Name="IsPublic" Type="bit" />
+  </EntityType>
+  <EntityType Name="Newsletters">
+    <Key>
+      <PropertyRef Name="NewsletterId" />
+    </Key>
+    <Property Name="NewsletterId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="PermissionId" />
+    </Key>
+    <Property Name="PermissionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="Dashboard" Type="varchar" MaxLength="10" />
+    <Property Name="Users" Type="varchar" MaxLength="10" />
+    <Property Name="Deals" Type="varchar" MaxLength="10" />
+    <Property Name="Directories" Type="varchar" MaxLength="10" />
+    <Property Name="Salons" Type="varchar" MaxLength="10" />
+    <Property Name="Adds" Type="varchar" MaxLength="10" />
+    <Property Name="Points" Type="varchar" MaxLength="10" />
+    <Property Name="SystemManagers" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Points">
+    <Key>
+      <PropertyRef Name="PointsId" />
+    </Key>
+    <Property Name="PointsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PointsFor" Type="varchar" MaxLength="50" />
+    <Property Name="PointsCount" Type="int" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SaloonCategories">
+    <Key>
+      <PropertyRef Name="SaloonCategoryId" />
+    </Key>
+    <Property Name="SaloonCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SaloonId" Type="int" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="AddedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Saloons">
+    <Key>
+      <PropertyRef Name="SaloonId" />
+    </Key>
+    <Property Name="SaloonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Description" Type="text" />
+    <Property Name="Image1" Type="varchar" MaxLength="50" />
+    <Property Name="Image2" Type="varchar" MaxLength="50" />
+    <Property Name="Image3" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="text" />
+    <Property Name="Latitude" Type="varchar" MaxLength="50" />
+    <Property Name="Longitude" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+    <Property Name="AcceptVouchers" Type="bit" />
+  </EntityType>
+  <EntityType Name="SystemManagers">
+    <Key>
+      <PropertyRef Name="SystemManagerId" />
+    </Key>
+    <Property Name="SystemManagerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SalonId" Type="int" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="AddedDate" Type="date" />
+    <Property Name="ModifiedDate" Type="date" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserBookedInterestedSaloons">
+    <Key>
+      <PropertyRef Name="UserBookedInterestedSaloonId" />
+    </Key>
+    <Property Name="UserBookedInterestedSaloonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="SaloonId" Type="int" />
+    <Property Name="IsBooked" Type="bit" />
+    <Property Name="IsInterested" Type="bit" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="BookingDate" Type="date" />
+    <Property Name="BookingTime" Type="varchar" MaxLength="50" />
+    <Property Name="Points" Type="int" />
+    <Property Name="Voucher" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserFavouriteAndBookedDeals">
+    <Key>
+      <PropertyRef Name="UserFavouriteBookedDealId" />
+    </Key>
+    <Property Name="UserFavouriteBookedDealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="SalonId" Type="int" />
+    <Property Name="DealId" Type="int" />
+    <Property Name="IsFavourite" Type="bit" />
+    <Property Name="IsBooked" Type="bit" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="Points" Type="int" />
+    <Property Name="Voucher" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserMouseTrackings">
+    <Key>
+      <PropertyRef Name="UserMouseTrackingId" />
+    </Key>
+    <Property Name="UserMouseTrackingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="EntityId" Type="int" />
+    <Property Name="EntityType" Type="varchar" MaxLength="100" />
+    <Property Name="AddedDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="FacebookId" Type="varchar" MaxLength="50" />
+    <Property Name="Role" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="Firstname" Type="varchar" MaxLength="50" />
+    <Property Name="Lastname" Type="varchar" MaxLength="50" />
+    <Property Name="Latitude" Type="varchar" MaxLength="50" />
+    <Property Name="Longitude" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="250" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State" Type="varchar" MaxLength="50" />
+    <Property Name="Country" Type="varchar" MaxLength="50" />
+    <Property Name="Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Facebook" Type="varchar" MaxLength="250" />
+    <Property Name="About" Type="text" />
+    <Property Name="Avatar" Type="varchar" MaxLength="250" />
+    <Property Name="AddedDate" Type="datetime" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+    <Property Name="DeviceId" Type="text" />
+    <Property Name="TotalPoints" Type="int" />
+  </EntityType>
+  <EntityType Name="UserVouchers">
+    <Key>
+      <PropertyRef Name="UserVoucherId" />
+    </Key>
+    <Property Name="UserVoucherId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Points" Type="int" />
+    <Property Name="EntityId" Type="int" />
+    <Property Name="EntityType" Type="varchar" MaxLength="50" />
+    <Property Name="Voucher" Type="varchar" MaxLength="50" />
+    <Property Name="GeneratedDate" Type="date" />
+  </EntityType>
+  <Function Name="CalculateDistance" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Longitude1" Type="decimal" Mode="In" />
+    <Parameter Name="Latitude1" Type="decimal" Mode="In" />
+    <Parameter Name="Longitude2" Type="decimal" Mode="In" />
+    <Parameter Name="Latitude2" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteSalonCategoriesForUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="salonId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllBookedDealsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllBookedSaloonsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllFavouriteDealsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllInterestedSaloonsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDealDetailByIdForService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DealId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetDealsGraphForAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="month" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetNewsLettersBasedOnCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="country" Type="varchar" Mode="In" />
+    <Parameter Name="month" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetRegisteresUsersCountForAdminDashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="country" Type="varchar" Mode="In" />
+    <Parameter Name="month" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetSalonsGraphForAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="month" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetSaloonCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetSaloonsByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CategoryId" Type="int" Mode="In" />
+    <Parameter Name="CountryName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetTotalBookingsOfDeal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dealId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetTotalBookingsOfSaloon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="salonId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetTotalFavouritesOfDeal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="dealId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetTotalInterestsOfSaloon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="salonId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetUserLikesOfAdds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CountryName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetUserVouchers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UserOrderList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spGetAroundMeSalons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PageSize" Type="int" Mode="In" />
+    <Parameter Name="PageNumber" Type="int" Mode="In" />
+    <Parameter Name="SortOrder" Type="varchar" Mode="In" />
+    <Parameter Name="Distance" Type="int" Mode="In" />
+    <Parameter Name="Latitude" Type="decimal" Mode="In" />
+    <Parameter Name="Longitude" Type="decimal" Mode="In" />
+  </Function>
+</Schema>

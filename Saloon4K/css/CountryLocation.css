@@ -1,0 +1,41 @@
+﻿
+.divCountry
+{
+    float: left;
+    width: 30%;
+    font-family: calibri;
+    padding: 12px;
+    height: 200px;
+}
+.divCountry:hover
+{
+    background-color: #2A2A2A;
+    border-radius: 5px;
+    color: white !important;
+}
+.divCountry label
+{
+    text-decoration: none;
+    color: #E1245E;
+    float: left;
+    margin-left: 7px;
+}
+.divCountry a
+{
+    text-decoration: none;
+}
+.divCountry img
+{
+    float: left;
+    width: 150px;
+}
+.divMain
+{
+    height: 375px;
+    padding: 30px;
+    width: 960px;
+    border-radius: 10px;
+    padding-top: 100px;
+    margin: 0 auto;
+    clear: both;
+}

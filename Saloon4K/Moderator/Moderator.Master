@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Moderator.master.cs"
+    Inherits="Saloon4K.Moderator.Moderator" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Sarah Beauty</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/globalize.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/uniform/jquery.uniform.min.js"></script>
+    <script src="js/jquery.bpopup-0.7.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.setInterval("closeMessage();", 6000);
+        });
+        function closeMessage() {
+            $(".msgSuccess").slideUp("slow", null);
+            $(".msgError").slideUp("slow", null);
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="wall-num11">
+    <%--<body class="bg-img-num1">--%>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="container container-fixed">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar brb" role="navigation">
+                    <div class="collapse navbar-collapse" style="float: left; width: 100%; margin-top: 20px;">
+                        <ul class="nav navbar-nav">
+                            <li runat="server"><a style="border-left: none;" href="~/Home.aspx" runat="server"
+                                title="Dashboard"><span class="icon-home"></span>Home</a></li>
+                            <li id="liDashboard" runat="server" visible="False"><a href="~/Moderator/Home.aspx"
+                                runat="server" title="Dashboard"><span class="icon-home"></span>Dashboard</a></li>
+                            <li id="liUsers" runat="server" visible="False"><a href="~/Moderator/UserManagement.aspx"
+                                runat="server"><span class="icon-user-md"></span>Users</a></li>
+                            <li id="liDeals" runat="server" visible="False"><a href="~/Moderator/SearchDeals.aspx"
+                                runat="server"><span class="icon-certificate"></span>Deals</a></li>
+                            <li id="liDirectories" runat="server" visible="False"><a href="~/Moderator/CategoriesManagement.aspx"
+                                runat="server"><span class="icon-edit"></span>Directories</a></li>
+                            <li id="liSalon" runat="server" visible="False"><a href="~/Moderator/SearchSalons.aspx"
+                                runat="server"><span class="icon-globe"></span>Salons</a></li>
+                            <li id="liAdds" runat="server" visible="False"><a href="~/Moderator/AddsSearch.aspx"
+                                runat="server"><span class="icon-money"></span>Adds</a></li>
+                            <li id="liPoints" runat="server" visible="False"><a href="~/Moderator/PointsManagement.aspx"
+                                runat="server"><span class="icon-money"></span>Points</a></li>
+                            <li id="liSystemManagers" runat="server" visible="False"><a href="~/Moderator/SystemManagersManagement.aspx"
+                                runat="server"><span class="icon-user"></span>System Managers</a></li>
+                            <li id="liPermissions" runat="server" visible="False"><a href="~/Moderator/PermissionsManagement.aspx"
+                                runat="server"><span class="icon-lock"></span>Permissions</a></li>
+                            <li id="liDealBookings" runat="server" visible="False"><a href="~/Moderator/DealBookings.aspx"
+                                runat="server"><span class="icon-money"></span>Deal Bookings</a></li>
+                            <li id="liSalonBookings" runat="server" visible="False"><a href="~/Moderator/SalonBookings.aspx"
+                                runat="server"><span class="icon-money"></span>Salon Bookings</a></li>
+                            <li id="liProfile" runat="server"><a href="~/Moderator/UserProfile.aspx" runat="server">
+                                <span class="icon-lock"></span>Profile</a></li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogout_Click"><span class="icon-user"></span>Logout</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="cmsBody" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿.star {	
+	cursor: pointer;	
+	 animation-name: cf3FadeInOut;
+   animation-timing-function: ease-in-out;
+   animation-iteration-count: infinite;
+   animation-duration: 1.5s;
+   animation-direction: alternate;   
+    -webkit-animation-name: cf3FadeInOut;
+   -webkit-animation-timing-function: ease-in-out;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-duration: 1.5s;
+   -webkit-animation-direction: alternate;   
+    -moz-animation-name: cf3FadeInOut;
+   -moz-animation-timing-function: ease-in-out;
+   -moz-animation-iteration-count: infinite;
+   -moz-animation-duration: 1.5s;
+   -moz-animation-direction: alternate;
+   -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    /*box-shadow: 0 10px 12px #000000;*/
+   
+}
+@-moz-keyframes cf3FadeInOut{
+    from{opacity:0.3}
+    to{opacity:1}
+}
+
+@-webkit-keyframes cf3FadeInOut{
+    from{opacity:0.3}
+    to{opacity:1}
+}
+
+@-o-keyframes cf3FadeInOut{
+    from{opacity:0.3}
+    to{opacity:1}
+}
+
+@-ms-keyframes cf3FadeInOut{
+    from{opacity:0.3;}
+    to{opacity:1;}
+}
+
+@-moz-keyframes none{
+    from{opacity:1}
+    to{opacity:1}
+}
+
+@-webkit-keyframes none{
+    from{opacity:1}
+    to{opacity:1}
+}
+
+@-o-keyframes none{
+    from{opacity:1}
+    to{opacity:1}
+}
+
+@-ms-keyframes none{
+    from{opacity:1;}
+    to{opacity:1;}
+}
+
+.glow {
+    animation-direction: alternate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-name: cf3FadeInOut;
+    animation-timing-function: ease-in-out;
+    background: url("../images/glow1.png") no-repeat scroll -53px center rgba(0, 0, 0, 0);
+    cursor: pointer;
+}
+.glow img {    
+    margin: 10px 0 0 26px;
+    width: 136px;
+    animation-direction: normal;
+    animation-duration: 150s;
+    animation-iteration-count: initial;
+    animation-name: none;
+    animation-timing-function: ease-in-out;
+}

@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Account.master.cs"
+    Inherits="Saloon4K.UserAccount.Account" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <div class="content">
+        <div class="salonkcontent">
+            <div class="saloncontainer">
+                <div class="ribbon">
+                    MY ACCOUNT</div>
+                <div class="saloninner">
+                    <div class="salonmenu">
+                        <ul>
+                            <li><a href="~/UserAccount/MyAccount.aspx" id="lnkMyProfile" runat="server">MY PROFILE</a></li>
+                            <li><a href="~/UserAccount/MyInterests.aspx" id="lnkMyInterests" runat="server">MY INTEREST</a></li>
+                            <li><a href="~/UserAccount/SaloonsBookList.aspx" id="lnkSalonsBooklist" runat="server">
+                                SALONS BOOKLIST</a></li>
+                            <li><a href="~/UserAccount/MyFavourites.aspx" id="lnkMyFavourites" runat="server">MY
+                                FAVORITES</a></li>
+                            <li><a href="~/UserAccount/DealsBookList.aspx" id="lnkMyBooklist" runat="server">DEALS
+                                BOOKLIST</a></li>
+                            <li><a href="~/UserAccount/MyVouchers.aspx" id="lnkMyVouchers" runat="server">My VOUCHERS</a></li>
+                        </ul>
+                    </div>
+                    <asp:ContentPlaceHolder runat="server" ID="AccountContent">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="rowads">
+                <div class="advt">
+                    <asp:Image runat="server" ID="SingleImageRight" CssClass="verticalAdd" onmouseenter="MouseTracking(this.id);" />
+                    <asp:HiddenField runat="server" ID="SingleImageRighthf" Value="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>

@@ -1,0 +1,155 @@
+section
+{
+    display: block;
+}
+ol, ul
+{
+    list-style: none;
+}
+
+
+table
+{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+img
+{
+    border: 0;
+    max-width: 100%;
+}
+
+p
+{
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+    color: black;
+}
+
+
+/* page structure */
+#w
+{
+    width: 660px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+#content
+{
+    padding: 8px 15px;
+    padding-bottom: 20px;
+}
+
+
+.options
+{
+    display: block;
+    text-align: right;
+    font-size: 1.2em;
+    line-height: 16px;
+    font-weight: bold;
+    color: #e02760;
+    margin-bottom: 8px;
+}
+.options .sorticon
+{
+    position: relative;
+    top: 7px;
+    float: left;
+    margin-left: 5px;
+}
+
+.options .sorticon img
+{
+    opacity: 0.6;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+.options .sorticon img:hover
+{
+    opacity: 1.0;
+}
+.options .sorticon.active img
+{
+    opacity: 1.0;
+}
+
+
+
+/* list styles */
+#listdisplay
+{
+    display: block;
+}
+
+#listdisplay li
+{
+    display: block;
+    width: 100%;
+    padding: 12px 8px 8px 0;
+    margin-bottom: 1px;
+    border-bottom: 1px solid #aaa;
+    float: left;
+}
+#listdisplay li a img
+{
+    display: block;
+    padding: 5px;
+    border: 2px solid #bbb;
+    background: #fff;
+    margin-right: 20px;
+    width: 200px;
+    height: 160px;
+}
+
+#listdisplay li .innercontent h2
+{
+    font-family: 'Helvetica Neue' , Helvetica, Arial, sans-serif;
+    font-size: 3.0em;
+    line-height: 1.35em;
+    margin-bottom: 4px;
+    color: #e02760;
+    font-weight: bold;
+}
+
+#listdisplay.thumbview li
+{
+    display: block;
+    width: 200px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 7px;
+    border: 0;
+}
+#listdisplay.thumbview li a img
+{
+    display: block;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 4px;
+}
+#listdisplay.thumbview li .innercontent
+{
+    display: block;
+    text-align: center;
+}
+#listdisplay.thumbview li .innercontent h2
+{
+    font-size: 2.2em;
+}
+#listdisplay.thumbview li .innercontent p
+{
+    display: none;
+}
+.h5
+{
+    font-size: 22px !important;
+    margin-left: 0 !important;
+    margin-top: 5px !important;
+    padding: 0 !important;
+    color: #DE275F !important;
+}

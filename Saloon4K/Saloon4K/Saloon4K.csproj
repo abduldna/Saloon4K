@@ -1,0 +1,809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{786AF270-37EA-46AA-A9A5-2EAE99C68019}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Saloon4K</RootNamespace>
+    <AssemblyName>Saloon4K</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json.Net35">
+      <HintPath>..\..\Alore\AloreServices\bin\Newtonsoft.Json.Net35.dll</HintPath>
+    </Reference>
+    <Reference Include="PushSharp.Apple, Version=2.1.2.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL" />
+    <Reference Include="PushSharp.Core, Version=2.1.2.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AddManagement.aspx" />
+    <Content Include="Confirmation.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="BookingConfirmation.aspx" />
+    <Content Include="css\bravado.css" />
+    <Content Include="css\colorpicker.css" />
+    <Content Include="css\CountryLocation.css" />
+    <Content Include="css\Country\default.css" />
+    <Content Include="css\Country\style2.css" />
+    <Content Include="css\ErrorPage.css" />
+    <Content Include="css\flexslider.css" />
+    <Content Include="css\jPicker-1.1.6.min.css" />
+    <Content Include="css\jPicker.css" />
+    <Content Include="css\jquery-ui.css" />
+    <Content Include="css\jquery.colourPicker.css" />
+    <Content Include="css\jquery.timepicker.css" />
+    <Content Include="css\normalise.css" />
+    <Content Include="css\smart_wizard.css" />
+    <Content Include="css\Transition.css" />
+    <Content Include="Deals.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="Directory.aspx" />
+    <Content Include="DirectorySaloons.aspx" />
+    <Content Include="EmailTemplates\AccountConfirmation.html" />
+    <Content Include="EmailTemplates\DealBookings.html" />
+    <Content Include="EmailTemplates\SaloonBookings.html" />
+    <Content Include="EmailTemplates\ContactUs.html" />
+    <Content Include="Error.aspx" />
+    <Content Include="fonts\gill_sans_mt-webfont.svg" />
+    <Content Include="fonts\gill_sans_mt_bold-webfont.svg" />
+    <Content Include="ForbiddenPage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\acbg.jpg" />
+    <Content Include="images\ad320.jpg" />
+    <Content Include="images\AddSquare.png" />
+    <Content Include="images\AlphaBar.png" />
+    <Content Include="images\arrow-down.gif" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\arrowPopup.png" />
+    <Content Include="images\avatar.jpg" />
+    <Content Include="images\avatarimage.jpg" />
+    <Content Include="images\backbtn.png" />
+    <Content Include="images\background.jpg" />
+    <Content Include="images\bag.png" />
+    <Content Include="images\banner1.jpg" />
+    <Content Include="images\bar-opacity.png" />
+    <Content Include="images\Bars.png" />
+    <Content Include="images\bg.png" />
+    <Content Include="images\btnNext.png" />
+    <Content Include="images\btnPrev.png" />
+    <Content Include="images\chanel.jpg" />
+    <Content Include="images\close.png" />
+    <Content Include="images\close_btn.png" />
+    <Content Include="images\CountryPopup.png" />
+    <Content Include="images\CountryPopupUp.png" />
+    <Content Include="images\delete.jpg" />
+    <Content Include="images\Directory_box.png" />
+    <Content Include="images\fav1.jpg" />
+    <Content Include="images\favicon.png" />
+    <Content Include="images\favourite.png" />
+    <Content Include="images\fb.png" />
+    <Content Include="images\fbbg.jpg" />
+    <Content Include="images\featureddeals.jpg" />
+    <Content Include="images\flags1.gif" />
+    <Content Include="images\flag_uae.png" />
+    <Content Include="images\footerbg.jpg" />
+    <Content Include="images\glow.png" />
+    <Content Include="images\glow1.png" />
+    <Content Include="images\hair1.jpg" />
+    <Content Include="images\header.jpg" />
+    <Content Include="images\heart.png" />
+    <Content Include="images\home.png" />
+    <Content Include="images\HomeBahrain.png" />
+    <Content Include="images\HomeKuwait.png" />
+    <Content Include="images\HomeOman.png" />
+    <Content Include="images\HomeQatar.png" />
+    <Content Include="images\HomeSaudi.png" />
+    <Content Include="images\HomeUAE.png" />
+    <Content Include="images\hover.jpg" />
+    <Content Include="images\jquery.colourPicker.gif" />
+    <Content Include="images\Kuwait.png" />
+    <Content Include="images\KuwaitButterfly.png" />
+    <Content Include="images\leaderboard.jpg" />
+    <Content Include="images\like.png" />
+    <Content Include="images\loader.gif" />
+    <Content Include="images\loader2.gif" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\map-opacity.png" />
+    <Content Include="images\mappoint.gif" />
+    <Content Include="images\Maps.png" />
+    <Content Include="images\menu.jpg" />
+    <Content Include="images\model1.jpg" />
+    <Content Include="images\model2.jpg" />
+    <Content Include="images\model2.png" />
+    <Content Include="images\move_bottom.png" />
+    <Content Include="images\move_top.png" />
+    <Content Include="images\mpu1.jpg" />
+    <Content Include="images\mpu3.jpg" />
+    <Content Include="images\mpu4.jpg" />
+    <Content Include="images\nav.jpg" />
+    <Content Include="images\neutrogena.jpg" />
+    <Content Include="images\next.png" />
+    <Content Include="images\noBanner.jpg" />
+    <Content Include="images\noBanner_verticle.jpg" />
+    <Content Include="images\NoColor.png" />
+    <Content Include="images\NoImage.png" />
+    <Content Include="images\picker.gif" />
+    <Content Include="images\pinkbg.jpg" />
+    <Content Include="images\popup.png" />
+    <Content Include="images\popupbg.jpg" />
+    <Content Include="images\popupouterbg.jpg" />
+    <Content Include="images\prev.png" />
+    <Content Include="images\preview-opacity.png" />
+    <Content Include="images\rangearrows.gif" />
+    <Content Include="images\reviewpic.jpg" />
+    <Content Include="images\ribbon.png" />
+    <Content Include="images\rocket.png" />
+    <Content Include="images\salon4k.png" />
+    <Content Include="images\salon_detailed_Box.png" />
+    <Content Include="images\SaudiArabia.png" />
+    <Content Include="images\searchbg.jpg" />
+    <Content Include="images\searchicon.png" />
+    <Content Include="images\settings.png" />
+    <Content Include="images\share.png" />
+    <Content Include="images\shutterstock_96938765.jpg" />
+    <Content Include="images\social.png" />
+    <Content Include="images\steam.png" />
+    <Content Include="images\tab1.jpg" />
+    <Content Include="images\tab2.jpg" />
+    <Content Include="images\tab3.jpg" />
+    <Content Include="images\tab4.jpg" />
+    <Content Include="images\tabbg.png" />
+    <Content Include="images\title_bg.jpg" />
+    <Content Include="images\title_box.png" />
+    <Content Include="images\trash.svg" />
+    <Content Include="images\UAE.png" />
+    <Content Include="images\UAEButterfly.png" />
+    <Content Include="images\view_more.jpg" />
+    <Content Include="images\Zoom.png" />
+    <Content Include="js\colorpicker.js" />
+    <Content Include="js\Country\modernizr.custom.js" />
+    <Content Include="js\ErrorPage.js" />
+    <Content Include="js\html5.js" />
+    <Content Include="js\jpicker-1.1.6.js" />
+    <Content Include="js\jpicker-1.1.6.min.js" />
+    <Content Include="js\jPicker.css" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery-ui.js" />
+    <Content Include="js\jquery.bpopup.min.js" />
+    <Content Include="js\jquery.colourPicker.js" />
+    <Content Include="js\jquery.easing.js" />
+    <Content Include="js\jquery.flexslider.js" />
+    <Content Include="js\jquery.leanModal.js" />
+    <Content Include="js\jquery.leanModal.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.timepicker.js" />
+    <Content Include="js\MyAccountLocationMap.js" />
+    <Content Include="js\Wizard.js" />
+    <Content Include="Moderator\AddEditDeals.aspx" />
+    <Content Include="Moderator\AddEditSalons.aspx" />
+    <Content Include="Moderator\AddsAddEdit.aspx" />
+    <Content Include="Moderator\AddsSearch.aspx" />
+    <Content Include="Moderator\assets\settings.html" />
+    <Content Include="Moderator\CategoriesManagement.aspx" />
+    <Content Include="Moderator\DashboardMouseTrackingAnalyticsPage.aspx" />
+    <Content Include="Moderator\DashboardNewsLettersAnalytics.aspx" />
+    <Content Include="Moderator\DashboardDealsAnalyticsPage.aspx" />
+    <Content Include="Moderator\DashboardSalonsAnalyticsPage.aspx" />
+    <Content Include="Moderator\DashboardUsersAnalytics.aspx" />
+    <Content Include="Moderator\img\featured.png" />
+    <Content Include="Moderator\PointsManagement.aspx" />
+    <Content Include="Moderator\css\backgrounds.css" />
+    <Content Include="Moderator\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Moderator\css\cleditor\buttons.gif" />
+    <Content Include="Moderator\css\cleditor\jquery.cleditor.css" />
+    <Content Include="Moderator\css\codemirror\codemirror.css" />
+    <Content Include="Moderator\css\codemirror\theme\midnight.css" />
+    <Content Include="Moderator\css\fancybox\jquery.fancybox.css" />
+    <Content Include="Moderator\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Moderator\css\fullcalendar\fullcalendar.css" />
+    <Content Include="Moderator\css\icons\font-awesome.min.css" />
+    <Content Include="Moderator\css\jquery\jquery-ui.min.css" />
+    <Content Include="Moderator\css\mcustomscrollbar\jquery.mCustomScrollbar.css" />
+    <Content Include="Moderator\css\mcustomscrollbar\mCSB_buttons.html" />
+    <Content Include="Moderator\css\select2\select2.css" />
+    <Content Include="Moderator\css\shbrush\shCoreDefault.css" />
+    <Content Include="Moderator\css\shbrush\shThemeDefault.css" />
+    <Content Include="Moderator\css\stylesheet.css" />
+    <Content Include="Moderator\css\stylesheets.css" />
+    <Content Include="Moderator\css\themes.css" />
+    <Content Include="Moderator\css\validationengine\validationEngine.css" />
+    <Content Include="Moderator\Default.aspx" />
+    <Content Include="Moderator\Home.aspx" />
+    <Content Include="Moderator\img\background\bg_num1.jpg" />
+    <Content Include="Moderator\img\background\bg_num2.jpg" />
+    <Content Include="Moderator\img\background\bg_num3.jpg" />
+    <Content Include="Moderator\img\background\bg_num4.jpg" />
+    <Content Include="Moderator\img\background\blight.png" />
+    <Content Include="Moderator\img\background\blight_ltr.png" />
+    <Content Include="Moderator\img\background\blight_rtl.png" />
+    <Content Include="Moderator\img\background\bt_cubs.png" />
+    <Content Include="Moderator\img\background\bt_cubs_a.png" />
+    <Content Include="Moderator\img\background\light.png" />
+    <Content Include="Moderator\img\background\light_ltr.png" />
+    <Content Include="Moderator\img\background\light_rtl.png" />
+    <Content Include="Moderator\img\background\splash_blue.png" />
+    <Content Include="Moderator\img\background\splash_white.png" />
+    <Content Include="Moderator\img\background\wlight.png" />
+    <Content Include="Moderator\img\background\wlight_ltr.png" />
+    <Content Include="Moderator\img\background\wlight_rtl.png" />
+    <Content Include="Moderator\img\close.png" />
+    <Content Include="Moderator\img\delete.png" />
+    <Content Include="Moderator\img\edit.png" />
+    <Content Include="Moderator\img\example\example_150x115.jpg" />
+    <Content Include="Moderator\img\example\example_500x380.jpg" />
+    <Content Include="Moderator\img\example\photo\img_2.jpg" />
+    <Content Include="Moderator\img\example\photo\img_2s.jpg" />
+    <Content Include="Moderator\img\example\photo\img_3.jpg" />
+    <Content Include="Moderator\img\example\photo\img_3s.jpg" />
+    <Content Include="Moderator\img\example\photo\img_4.jpg" />
+    <Content Include="Moderator\img\example\photo\img_4s.jpg" />
+    <Content Include="Moderator\img\example\user\adminUser.png" />
+    <Content Include="Moderator\img\example\user\adminUser1.png" />
+    <Content Include="Moderator\img\example\user\alexey.jpg" />
+    <Content Include="Moderator\img\example\user\alexey_s.jpg" />
+    <Content Include="Moderator\img\example\user\dmitry.jpg" />
+    <Content Include="Moderator\img\example\user\dmitry_b.jpg" />
+    <Content Include="Moderator\img\example\user\dmitry_s.jpg" />
+    <Content Include="Moderator\img\example\user\helen.jpg" />
+    <Content Include="Moderator\img\example\user\helen_s.jpg" />
+    <Content Include="Moderator\img\example\user\olga.jpg" />
+    <Content Include="Moderator\img\example\user\olga_s.jpg" />
+    <Content Include="Moderator\img\example\user_bg.jpg" />
+    <Content Include="Moderator\img\fancybox\blank.gif" />
+    <Content Include="Moderator\img\fancybox\fancybox_loading.gif" />
+    <Content Include="Moderator\img\fancybox\fancybox_overlay.png" />
+    <Content Include="Moderator\img\fancybox\fancybox_sprite.png" />
+    <Content Include="Moderator\img\jqueryui\animated-overlay.gif" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_diagonals-thick_18_b81900_5F40x40.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_diagonals-thick_20_666666_5F40x40.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_flat_10_000000_5F40x100.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Moderator\img\jqueryui\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Moderator\img\jqueryui\ui-icons_222222_5F256x240.png" />
+    <Content Include="Moderator\img\jqueryui\ui-icons_228ef1_5F256x240.png" />
+    <Content Include="Moderator\img\jqueryui\ui-icons_ef8c08_5F256x240.png" />
+    <Content Include="Moderator\img\jqueryui\ui-icons_ffd27a_5F256x240.png" />
+    <Content Include="Moderator\img\jqueryui\ui-icons_ffffff_5F256x240.png" />
+    <Content Include="Moderator\img\loader.gif" />
+    <Content Include="Moderator\img\logo.png" />
+    <Content Include="Moderator\img\logob.png" />
+    <Content Include="Moderator\img\select2\select2-spinner.gif" />
+    <Content Include="Moderator\img\select2\select2.png" />
+    <Content Include="Moderator\img\select2\select2x2.png" />
+    <Content Include="Moderator\img\user.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num1.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num10.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num11.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num12.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num13.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num14.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num15.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num16.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num2.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num3.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num4.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num5.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num6.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num7.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num8.jpg" />
+    <Content Include="Moderator\img\wallpapers\wall_num9.jpg" />
+    <Content Include="Moderator\js\jquery.bpopup-0.7.0.min.js" />
+    <Content Include="Moderator\js\General.js" />
+    <Content Include="Moderator\js\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="Moderator\js\plugins\cleditor\jquery.cleditor.min.js" />
+    <Content Include="Moderator\js\plugins\codemirror\addon\edit\matchbrackets.js" />
+    <Content Include="Moderator\js\plugins\codemirror\codemirror.js" />
+    <Content Include="Moderator\js\plugins\codemirror\mode\clike\clike.js" />
+    <Content Include="Moderator\js\plugins\codemirror\mode\css\css.js" />
+    <Content Include="Moderator\js\plugins\codemirror\mode\htmlmixed\htmlmixed.js" />
+    <Content Include="Moderator\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="Moderator\js\plugins\codemirror\mode\php\php.js" />
+    <Content Include="Moderator\js\plugins\codemirror\mode\xml\xml.js" />
+    <Content Include="Moderator\js\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="Moderator\js\plugins\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Moderator\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Moderator\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Moderator\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Moderator\js\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Moderator\js\plugins\ibutton\jquery.ibutton.js" />
+    <Content Include="Moderator\js\plugins\jquery\globalize.js" />
+    <Content Include="Moderator\js\plugins\jquery\jquery-migrate.min.js" />
+    <Content Include="Moderator\js\plugins\jquery\jquery-ui-timepicker-addon.js" />
+    <Content Include="Moderator\js\plugins\jquery\jquery-ui.min.js" />
+    <Content Include="Moderator\js\plugins\jquery\jquery.min.js" />
+    <Content Include="Moderator\js\plugins\knob\jquery.knob.js" />
+    <Content Include="Moderator\js\plugins\maskedinput\jquery.maskedinput.min.js" />
+    <Content Include="Moderator\js\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Moderator\js\plugins\noty\jquery.noty.js" />
+    <Content Include="Moderator\js\plugins\noty\layouts\topCenter.js" />
+    <Content Include="Moderator\js\plugins\noty\layouts\topLeft.js" />
+    <Content Include="Moderator\js\plugins\noty\layouts\topRight.js" />
+    <Content Include="Moderator\js\plugins\noty\themes\default.js" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\css\jquery.plupload.queue.css" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\backgrounds.gif" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\buttons-disabled.png" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\buttons.png" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\delete.png" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\done.png" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\error.png" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\img\transp50.png" />
+    <Content Include="Moderator\js\plugins\plupload\jquery.plupload.queue\jquery.plupload.queue.min.js" />
+    <Content Include="Moderator\js\plugins\plupload\plupload.full.min.js" />
+    <Content Include="Moderator\js\plugins\select2\select2.min.js" />
+    <Content Include="Moderator\js\plugins\shbrush\shBrushCss.js" />
+    <Content Include="Moderator\js\plugins\shbrush\shBrushJScript.js" />
+    <Content Include="Moderator\js\plugins\shbrush\shBrushXml.js" />
+    <Content Include="Moderator\js\plugins\shbrush\shCore.js" />
+    <Content Include="Moderator\js\plugins\shbrush\XRegExp.js" />
+    <Content Include="Moderator\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Moderator\js\plugins\stepy\jquery.stepy.min.js" />
+    <Content Include="Moderator\js\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="Moderator\js\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="Moderator\js\plugins\validationengine\jquery.validationEngine.js" />
+    <Content Include="Moderator\js\plugins\validationengine\languages\jquery.validationEngine-en.js" />
+    <Content Include="Moderator\js\settings.js" />
+    <Content Include="Moderator\SearchSalons.aspx" />
+    <Content Include="Moderator\SearchDeals.aspx" />
+    <Content Include="Moderator\UserManagement.aspx" />
+    <Content Include="Moderator\WebForm1.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Saloon4KService.svc" />
+    <Content Include="Uploads\Categories\a5bba5ab76de.jpg" />
+    <Content Include="Uploads\Deals\Deal1.jpg" />
+    <Content Include="Uploads\Deals\Deal2.jpg" />
+    <Content Include="Uploads\Deals\Deal3.jpg" />
+    <Content Include="Uploads\Deals\Deal4.jpg" />
+    <Content Include="Uploads\Deals\Deal5.jpg" />
+    <Content Include="Uploads\Deals\Deal6.jpg" />
+    <Content Include="Uploads\Saloons\Haroon.jpg" />
+    <Content Include="Uploads\Saloons\Michael.jpg" />
+    <Content Include="Uploads\Saloons\TheNailSpa.jpg" />
+    <Content Include="UserAccount\MyAccount.aspx" />
+    <Content Include="UserAccount\MyAvatar.aspx" />
+    <Content Include="UserAccount\DealsBookList.aspx" />
+    <Content Include="UserAccount\MyFavourites.aspx" />
+    <Content Include="UserAccount\MyFriends.aspx" />
+    <Content Include="UserAccount\MyInterests.aspx" />
+    <Content Include="UserAccount\MyLocation.aspx" />
+    <Content Include="UserAccount\SaloonsBookList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddManagement.aspx.cs">
+      <DependentUpon>AddManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddManagement.aspx.designer.cs">
+      <DependentUpon>AddManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Common.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Common.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookingConfirmation.aspx.cs">
+      <DependentUpon>BookingConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingConfirmation.aspx.designer.cs">
+      <DependentUpon>BookingConfirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Deals.aspx.cs">
+      <DependentUpon>Deals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Deals.aspx.designer.cs">
+      <DependentUpon>Deals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Directory.aspx.cs">
+      <DependentUpon>Directory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directory.aspx.designer.cs">
+      <DependentUpon>Directory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DirectorySaloons.aspx.cs">
+      <DependentUpon>DirectorySaloons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DirectorySaloons.aspx.designer.cs">
+      <DependentUpon>DirectorySaloons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForbiddenPage.aspx.cs">
+      <DependentUpon>ForbiddenPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForbiddenPage.aspx.designer.cs">
+      <DependentUpon>ForbiddenPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ISaloon4KService.cs" />
+    <Compile Include="Moderator\AddEditDeals.aspx.cs">
+      <DependentUpon>AddEditDeals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\AddEditDeals.aspx.designer.cs">
+      <DependentUpon>AddEditDeals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\AddEditSalons.aspx.cs">
+      <DependentUpon>AddEditSalons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\AddEditSalons.aspx.designer.cs">
+      <DependentUpon>AddEditSalons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\AddsAddEdit.aspx.cs">
+      <DependentUpon>AddsAddEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\AddsAddEdit.aspx.designer.cs">
+      <DependentUpon>AddsAddEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\AddsSearch.aspx.cs">
+      <DependentUpon>AddsSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\AddsSearch.aspx.designer.cs">
+      <DependentUpon>AddsSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\CategoriesManagement.aspx.cs">
+      <DependentUpon>CategoriesManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\CategoriesManagement.aspx.designer.cs">
+      <DependentUpon>CategoriesManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\DashboardMouseTrackingAnalyticsPage.aspx.cs">
+      <DependentUpon>DashboardMouseTrackingAnalyticsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\DashboardMouseTrackingAnalyticsPage.aspx.designer.cs">
+      <DependentUpon>DashboardMouseTrackingAnalyticsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\DashboardNewsLettersAnalytics.aspx.cs">
+      <DependentUpon>DashboardNewsLettersAnalytics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\DashboardNewsLettersAnalytics.aspx.designer.cs">
+      <DependentUpon>DashboardNewsLettersAnalytics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\DashboardDealsAnalyticsPage.aspx.cs">
+      <DependentUpon>DashboardDealsAnalyticsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\DashboardDealsAnalyticsPage.aspx.designer.cs">
+      <DependentUpon>DashboardDealsAnalyticsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\DashboardSalonsAnalyticsPage.aspx.cs">
+      <DependentUpon>DashboardSalonsAnalyticsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\DashboardSalonsAnalyticsPage.aspx.designer.cs">
+      <DependentUpon>DashboardSalonsAnalyticsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\DashboardUsersAnalytics.aspx.cs">
+      <DependentUpon>DashboardUsersAnalytics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\DashboardUsersAnalytics.aspx.designer.cs">
+      <DependentUpon>DashboardUsersAnalytics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\PointsManagement.aspx.cs">
+      <DependentUpon>PointsManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\PointsManagement.aspx.designer.cs">
+      <DependentUpon>PointsManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\Moderator.Master.cs">
+      <DependentUpon>Moderator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\Moderator.Master.designer.cs">
+      <DependentUpon>Moderator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\SearchSalons.aspx.cs">
+      <DependentUpon>SearchSalons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\SearchSalons.aspx.designer.cs">
+      <DependentUpon>SearchSalons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\SearchDeals.aspx.cs">
+      <DependentUpon>SearchDeals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\SearchDeals.aspx.designer.cs">
+      <DependentUpon>SearchDeals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Moderator\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Moderator\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Saloon4KService.svc.cs">
+      <DependentUpon>Saloon4KService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\Account.master.cs">
+      <DependentUpon>Account.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\Account.master.designer.cs">
+      <DependentUpon>Account.master</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\MyAvatar.aspx.cs">
+      <DependentUpon>MyAvatar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\MyAvatar.aspx.designer.cs">
+      <DependentUpon>MyAvatar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\DealsBookList.aspx.cs">
+      <DependentUpon>DealsBookList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\DealsBookList.aspx.designer.cs">
+      <DependentUpon>DealsBookList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\MyFavourites.aspx.cs">
+      <DependentUpon>MyFavourites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\MyFavourites.aspx.designer.cs">
+      <DependentUpon>MyFavourites.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\MyFriends.aspx.cs">
+      <DependentUpon>MyFriends.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\MyFriends.aspx.designer.cs">
+      <DependentUpon>MyFriends.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\MyInterests.aspx.cs">
+      <DependentUpon>MyInterests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\MyInterests.aspx.designer.cs">
+      <DependentUpon>MyInterests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\MyLocation.aspx.cs">
+      <DependentUpon>MyLocation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\MyLocation.aspx.designer.cs">
+      <DependentUpon>MyLocation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserAccount\SaloonsBookList.aspx.cs">
+      <DependentUpon>SaloonsBookList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserAccount\SaloonsBookList.aspx.designer.cs">
+      <DependentUpon>SaloonsBookList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Certificates\Certificatesfinal.p12" />
+    <None Include="Certificates\profuction12.p12" />
+    <None Include="Certificates\Saloon4kCertificatekey.p12" />
+    <None Include="fonts\GILB_.TTF" />
+    <None Include="fonts\GILC_.TTF" />
+    <None Include="fonts\Gill Sans MT Bold.ttf" />
+    <None Include="fonts\Gill Sans MT.ttf" />
+    <None Include="fonts\gill_sans_mt-webfont.eot" />
+    <None Include="fonts\gill_sans_mt-webfont.ttf" />
+    <None Include="fonts\gill_sans_mt-webfont.woff" />
+    <None Include="fonts\gill_sans_mt_bold-webfont.eot" />
+    <None Include="fonts\gill_sans_mt_bold-webfont.ttf" />
+    <None Include="fonts\gill_sans_mt_bold-webfont.woff" />
+    <None Include="fonts\GIL__.TTF" />
+    <Content Include="UserAccount\Account.master" />
+    <None Include="Moderator\css\fonts\fontawesome-webfontd41d.eot" />
+    <None Include="Moderator\css\fonts\fontawesome-webfontf77b.eot" />
+    <None Include="Moderator\css\fonts\fontawesome-webfontf77b.ttf" />
+    <None Include="Moderator\css\fonts\fontawesome-webfontf77b.woff" />
+    <None Include="Moderator\img\background\Descr.WD3" />
+    <None Include="Moderator\img\example\Descr.WD3" />
+    <None Include="Moderator\img\example\photo\Descr.WD3" />
+    <None Include="Moderator\img\example\user\Descr.WD3" />
+    <None Include="Moderator\img\fancybox\Descr.WD3" />
+    <None Include="Moderator\img\jqueryui\Descr.WD3" />
+    <None Include="Moderator\img\select2\Descr.WD3" />
+    <None Include="Moderator\img\wallpapers\Descr.WD3" />
+    <Content Include="Moderator\Moderator.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Common.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Common.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Saloon4kBLL\Saloon4kBLL.csproj">
+      <Project>{C85398C7-C968-400E-ACA2-2FE1B3ED22AD}</Project>
+      <Name>Saloon4kBLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Uploads\Adds\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>64196</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

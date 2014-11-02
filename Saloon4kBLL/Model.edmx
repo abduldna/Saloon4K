@@ -1,0 +1,1483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Saloon4KModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="Saloon4KModelStoreContainer">
+          <EntitySet Name="AddsManagement" EntityType="Saloon4KModel.Store.AddsManagement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Categories" EntityType="Saloon4KModel.Store.Categories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Deals" EntityType="Saloon4KModel.Store.Deals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="event" EntityType="Saloon4KModel.Store.event" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IntermediateUsers" EntityType="Saloon4KModel.Store.IntermediateUsers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="MobileAddsManagement" EntityType="Saloon4KModel.Store.MobileAddsManagement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Newsletters" EntityType="Saloon4KModel.Store.Newsletters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Permissions" EntityType="Saloon4KModel.Store.Permissions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Points" EntityType="Saloon4KModel.Store.Points" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SaloonCategories" EntityType="Saloon4KModel.Store.SaloonCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Saloons" EntityType="Saloon4KModel.Store.Saloons" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SystemManagers" EntityType="Saloon4KModel.Store.SystemManagers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserBookedInterestedSaloons" EntityType="Saloon4KModel.Store.UserBookedInterestedSaloons" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserFavouriteAndBookedDeals" EntityType="Saloon4KModel.Store.UserFavouriteAndBookedDeals" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserMouseTrackings" EntityType="Saloon4KModel.Store.UserMouseTrackings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="Saloon4KModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserVouchers" EntityType="Saloon4KModel.Store.UserVouchers" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AddsManagement">
+          <Key>
+            <PropertyRef Name="AddsManagementId" />
+          </Key>
+          <Property Name="AddsManagementId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Image1" Type="varchar" MaxLength="50" />
+          <Property Name="Position1" Type="varchar" MaxLength="50" />
+          <Property Name="Alignment1" Type="varchar" MaxLength="50" />
+          <Property Name="Image2" Type="varchar" MaxLength="50" />
+          <Property Name="Position2" Type="varchar" MaxLength="50" />
+          <Property Name="Alignment2" Type="varchar" MaxLength="50" />
+          <Property Name="Image3" Type="varchar" MaxLength="50" />
+          <Property Name="Position3" Type="varchar" MaxLength="50" />
+          <Property Name="Alignment3" Type="varchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="AddStatus" Type="varchar" MaxLength="50" />
+          <Property Name="PageName" Type="varchar" MaxLength="50" />
+          <Property Name="IsPublic" Type="bit" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Image" Type="varchar" MaxLength="50" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Deals">
+          <Key>
+            <PropertyRef Name="DealId" />
+          </Key>
+          <Property Name="DealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="SaloonId" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Image" Type="varchar" MaxLength="250" />
+          <Property Name="IsDealOfTheDay" Type="bit" />
+          <Property Name="IsFeatured" Type="bit" />
+          <Property Name="AreaOfDeal" Type="varchar" MaxLength="250" />
+          <Property Name="Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="Longitude" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="ActualPrice" Type="decimal" />
+          <Property Name="DiscountedPrice" Type="decimal" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+          <Property Name="AcceptVouchers" Type="bit" />
+        </EntityType>
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="event_id" />
+          </Key>
+          <Property Name="event_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="varchar" MaxLength="100" />
+          <Property Name="description" Type="varchar" MaxLength="200" />
+          <Property Name="event_start" Type="datetime" />
+          <Property Name="event_end" Type="datetime" />
+        </EntityType>
+        <EntityType Name="IntermediateUsers">
+          <Key>
+            <PropertyRef Name="IntermediateUserId" />
+          </Key>
+          <Property Name="IntermediateUserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FacebookId" Type="varchar" MaxLength="50" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" />
+          <Property Name="Lastname" Type="varchar" MaxLength="50" />
+          <Property Name="Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="Longitude" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Facebook" Type="varchar" MaxLength="250" />
+          <Property Name="About" Type="text" />
+          <Property Name="Avatar" Type="varchar" MaxLength="250" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MobileAddsManagement">
+          <Key>
+            <PropertyRef Name="MobileAddId" />
+          </Key>
+          <Property Name="MobileAddId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AddFor" Type="varchar" MaxLength="50" />
+          <Property Name="Image1" Type="varchar" MaxLength="50" />
+          <Property Name="Image2" Type="varchar" MaxLength="50" />
+          <Property Name="Image3" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="AddStatus" Type="varchar" MaxLength="50" />
+          <Property Name="IsPublic" Type="bit" />
+        </EntityType>
+        <EntityType Name="Newsletters">
+          <Key>
+            <PropertyRef Name="NewsletterId" />
+          </Key>
+          <Property Name="NewsletterId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="AddedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Permissions">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Name="PermissionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="Dashboard" Type="varchar" MaxLength="10" />
+          <Property Name="Users" Type="varchar" MaxLength="10" />
+          <Property Name="Deals" Type="varchar" MaxLength="10" />
+          <Property Name="Directories" Type="varchar" MaxLength="10" />
+          <Property Name="Salons" Type="varchar" MaxLength="10" />
+          <Property Name="Adds" Type="varchar" MaxLength="10" />
+          <Property Name="Points" Type="varchar" MaxLength="10" />
+          <Property Name="SystemManagers" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Points">
+          <Key>
+            <PropertyRef Name="PointsId" />
+          </Key>
+          <Property Name="PointsId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PointsFor" Type="varchar" MaxLength="50" />
+          <Property Name="PointsCount" Type="int" />
+          <Property Name="AddedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SaloonCategories">
+          <Key>
+            <PropertyRef Name="SaloonCategoryId" />
+          </Key>
+          <Property Name="SaloonCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SaloonId" Type="int" />
+          <Property Name="CategoryId" Type="int" />
+          <Property Name="AddedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Saloons">
+          <Key>
+            <PropertyRef Name="SaloonId" />
+          </Key>
+          <Property Name="SaloonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="text" />
+          <Property Name="Image1" Type="varchar" MaxLength="50" />
+          <Property Name="Image2" Type="varchar" MaxLength="50" />
+          <Property Name="Image3" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="text" />
+          <Property Name="Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="Longitude" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+          <Property Name="AcceptVouchers" Type="bit" />
+        </EntityType>
+        <EntityType Name="SystemManagers">
+          <Key>
+            <PropertyRef Name="SystemManagerId" />
+          </Key>
+          <Property Name="SystemManagerId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SalonId" Type="int" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" MaxLength="50" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="AddedDate" Type="date" />
+          <Property Name="ModifiedDate" Type="date" />
+          <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserBookedInterestedSaloons">
+          <Key>
+            <PropertyRef Name="UserBookedInterestedSaloonId" />
+          </Key>
+          <Property Name="UserBookedInterestedSaloonId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="SaloonId" Type="int" />
+          <Property Name="IsBooked" Type="bit" />
+          <Property Name="IsInterested" Type="bit" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="BookingDate" Type="date" />
+          <Property Name="BookingTime" Type="varchar" MaxLength="50" />
+          <Property Name="Points" Type="int" />
+          <Property Name="Voucher" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserFavouriteAndBookedDeals">
+          <Key>
+            <PropertyRef Name="UserFavouriteBookedDealId" />
+          </Key>
+          <Property Name="UserFavouriteBookedDealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="SalonId" Type="int" />
+          <Property Name="DealId" Type="int" />
+          <Property Name="IsFavourite" Type="bit" />
+          <Property Name="IsBooked" Type="bit" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="Points" Type="int" />
+          <Property Name="Voucher" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserMouseTrackings">
+          <Key>
+            <PropertyRef Name="UserMouseTrackingId" />
+          </Key>
+          <Property Name="UserMouseTrackingId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="EntityId" Type="int" />
+          <Property Name="EntityType" Type="varchar" MaxLength="100" />
+          <Property Name="AddedDate" Type="date" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FacebookId" Type="varchar" MaxLength="50" />
+          <Property Name="Role" Type="varchar" MaxLength="50" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="Firstname" Type="varchar" MaxLength="50" />
+          <Property Name="Lastname" Type="varchar" MaxLength="50" />
+          <Property Name="Latitude" Type="varchar" MaxLength="50" />
+          <Property Name="Longitude" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="250" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Facebook" Type="varchar" MaxLength="250" />
+          <Property Name="About" Type="text" />
+          <Property Name="Avatar" Type="varchar" MaxLength="250" />
+          <Property Name="AddedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="RecordStatus" Type="varchar" MaxLength="50" />
+          <Property Name="DeviceId" Type="text" />
+          <Property Name="TotalPoints" Type="int" />
+        </EntityType>
+        <EntityType Name="UserVouchers">
+          <Key>
+            <PropertyRef Name="UserVoucherId" />
+          </Key>
+          <Property Name="UserVoucherId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="Points" Type="int" />
+          <Property Name="EntityId" Type="int" />
+          <Property Name="EntityType" Type="varchar" MaxLength="50" />
+          <Property Name="Voucher" Type="varchar" MaxLength="50" />
+          <Property Name="GeneratedDate" Type="date" />
+        </EntityType>
+        <Function Name="CalculateDistance" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Longitude1" Type="decimal" Mode="In" />
+          <Parameter Name="Latitude1" Type="decimal" Mode="In" />
+          <Parameter Name="Longitude2" Type="decimal" Mode="In" />
+          <Parameter Name="Latitude2" Type="decimal" Mode="In" />
+        </Function>
+        <Function Name="sp_DeleteSalonCategoriesForUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="salonId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetAllBookedDealsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetAllBookedSaloonsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetAllFavouriteDealsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetAllInterestedSaloonsByUserId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="UserId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetDealDetailByIdForService" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DealId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetDealsGraphForAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="month" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetNewsLettersBasedOnCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="country" Type="varchar" Mode="In" />
+          <Parameter Name="month" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetRegisteresUsersCountForAdminDashboard" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="country" Type="varchar" Mode="In" />
+          <Parameter Name="month" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetSalonsGraphForAdmin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="month" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetSaloonCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_GetSaloonsByCategory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CategoryId" Type="int" Mode="In" />
+          <Parameter Name="CountryName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetTotalBookingsOfDeal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dealId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetTotalBookingsOfSaloon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="salonId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetTotalFavouritesOfDeal" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="dealId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetTotalInterestsOfSaloon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="salonId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetUserLikesOfAdds" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CountryName" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetUserVouchers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UserOrderList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spGetAroundMeSalons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PageSize" Type="int" Mode="In" />
+          <Parameter Name="PageNumber" Type="int" Mode="In" />
+          <Parameter Name="SortOrder" Type="varchar" Mode="In" />
+          <Parameter Name="Distance" Type="int" Mode="In" />
+          <Parameter Name="Latitude" Type="decimal" Mode="In" />
+          <Parameter Name="Longitude" Type="decimal" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Saloon4KModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="Saloon4KEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Saloon4KModel.Category" />
+          <EntitySet Name="IntermediateUsers" EntityType="Saloon4KModel.IntermediateUser" />
+          <EntitySet Name="SaloonCategories" EntityType="Saloon4KModel.SaloonCategory" />
+          <FunctionImport Name="GetAllFavouriteDealsByUserId" ReturnType="Collection(Saloon4KModel.ListGetAllFavouriteDealsByUserId)">
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllBookedDealsByUserId" ReturnType="Collection(Saloon4KModel.ListGetAllBookedDealsByUserId)">
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetSaloonCategories" ReturnType="Collection(Saloon4KModel.List_GetSaloonCategories)" />
+          <FunctionImport Name="GetAllSaloonsByCategoryId" ReturnType="Collection(Saloon4KModel.ListOfGetAllSaloonsByCategoryId)">
+            <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+            <Parameter Name="CountryName" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Points" EntityType="Saloon4KModel.Point" />
+          <FunctionImport Name="GetAllInterestedSaloonsByUserId" ReturnType="Collection(Saloon4KModel.ListGetAllInterestedSaloonsByUserId)">
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAllBookedSaloonsByUserId" ReturnType="Collection(Saloon4KModel.ListGetAllBookedSaloonsByUserId)">
+          <Parameter Name="UserId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetAroundMeSalons" ReturnType="Collection(Saloon4KModel.ListGetAroundMeSalons)">
+            <Parameter Name="PageSize" Mode="In" Type="Int32" />
+            <Parameter Name="PageNumber" Mode="In" Type="Int32" />
+            <Parameter Name="SortOrder" Mode="In" Type="String" />
+            <Parameter Name="Distance" Mode="In" Type="Int32" />
+            <Parameter Name="Latitude" Mode="In" Type="Decimal" />
+            <Parameter Name="Longitude" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="GetFavouriteDealsCount" ReturnType="Collection(Saloon4KModel.EntityGetFavouriteDealsCount)">
+          <Parameter Name="dealId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetBookedDealsCount" ReturnType="Collection(Saloon4KModel.EntityGetBookedDealsCount)">
+          <Parameter Name="dealId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetBookedSalonsCount" ReturnType="Collection(Saloon4KModel.EntityGetBookedSalonsCount)">
+          <Parameter Name="salonId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetInterestedSalonsCount" ReturnType="Collection(Saloon4KModel.EntityGetInterestedSalonsCount)">
+          <Parameter Name="salonId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetRegisteresUsersCountForAdminDashboard" ReturnType="Collection(Saloon4KModel.ListGetRegisteresUsersCountForAdminDashboard)" >
+            <Parameter Name="country" Mode="In" Type="String" />
+            <Parameter Name="month" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetSalonsGraphForAdmin" ReturnType="Collection(Saloon4KModel.ListGetSalonsGraphForAdmin)">
+            <Parameter Name="Country" Mode="In" Type="String" />
+            <Parameter Name="month" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetDealsGraphForAdmin" ReturnType="Collection(Saloon4KModel.ListGetDealsGraphForAdmin)">
+            <Parameter Name="Country" Mode="In" Type="String" />
+            <Parameter Name="month" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Newsletters" EntityType="Saloon4KModel.Newsletter" />
+          <FunctionImport Name="GetNewsLettersForAdmin" ReturnType="Collection(Saloon4KModel.ListGetNewsLettersForDashboard)">
+            <Parameter Name="country" Mode="In" Type="String" />
+            <Parameter Name="month" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetUserOrderList" ReturnType="Collection(Saloon4KModel.ListGetUserOrderList)">
+          <Parameter Name="userID" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetDealDetailByIdForService" ReturnType="Collection(Saloon4KModel.EntityGetDealDetailByIdForService)">
+          <Parameter Name="DealId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="AddsManagements" EntityType="Saloon4KModel.AddsManagement" />
+          <EntitySet Name="events" EntityType="Saloon4KModel.event" />
+          <EntitySet Name="UserMouseTrackings" EntityType="Saloon4KModel.UserMouseTracking" />
+          <FunctionImport Name="GetUserLikeAdds" ReturnType="Collection(Saloon4KModel.GetUserLikeAddsList)">
+          <Parameter Name="CountryName" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Deals" EntityType="Saloon4KModel.Deal" />
+          <EntitySet Name="Saloons" EntityType="Saloon4KModel.Saloon" />
+          <EntitySet Name="SystemManagers" EntityType="Saloon4KModel.SystemManager" />
+          <EntitySet Name="UserVouchers" EntityType="Saloon4KModel.UserVoucher" />
+          <FunctionImport Name="GetUserVouchers" ReturnType="Collection(Saloon4KModel.GetUserVouchersList)">
+          <Parameter Name="userId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Users" EntityType="Saloon4KModel.User" />
+          <EntitySet Name="Permissions" EntityType="Saloon4KModel.Permission" />
+          <EntitySet Name="UserBookedInterestedSaloons" EntityType="Saloon4KModel.UserBookedInterestedSaloon" />
+          <EntitySet Name="UserFavouriteAndBookedDeals" EntityType="Saloon4KModel.UserFavouriteAndBookedDeal" />
+          <EntitySet Name="MobileAddsManagements" EntityType="Saloon4KModel.MobileAddsManagement" />
+        </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="AddedDate" Type="DateTime" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <Property Name="RecordStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Image" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="IntermediateUser">
+          <Key>
+            <PropertyRef Name="IntermediateUserId" />
+          </Key>
+          <Property Name="IntermediateUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacebookId" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Role" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Firstname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Lastname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Latitude" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Longitude" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Facebook" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="About" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="Avatar" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="AddedDate" Type="DateTime" />
+          <Property Name="ModifiedDate" Type="DateTime" />
+          <Property Name="RecordStatus" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SaloonCategory">
+          <Key>
+            <PropertyRef Name="SaloonCategoryId" />
+          </Key>
+          <Property Name="SaloonCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SaloonId" Type="Int32" />
+          <Property Name="CategoryId" Type="Int32" />
+          <Property Name="AddedDate" Type="DateTime" />
+        </EntityType>
+        <ComplexType Name="ListGetAllFavouriteDealsByUserId">
+          <Property Type="Int32" Name="UserFavouriteBookedDealId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="DealId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ListGetAllBookedDealsByUserId">
+          <Property Type="Int32" Name="UserFavouriteBookedDealId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="DealId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ListGetAllSaloonsByCategoryId">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListOfGetAllSaloonsByCategoryId">
+          <Property Type="Int32" Name="SaloonId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="CategoryId" Nullable="true" />
+          <Property Type="String" Name="Image1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image3" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="ListGetSaloonCategories">
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="SaloonCategoryId" Nullable="true" />
+          <Property Type="Int32" Name="SaloonId" Nullable="true" />
+          <Property Type="Int32" Name="CategoryId1" Nullable="true" />
+          <Property Type="DateTime" Name="AddedDate1" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ListGetSalonCategories">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="Int32" Name="SaloonId" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="List_GetSaloonCategories">
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="CategoryId" Nullable="false" />
+          <Property Type="Int32" Name="SaloonId" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Point">
+          <Key>
+            <PropertyRef Name="PointsId" />
+          </Key>
+          <Property Type="Int32" Name="PointsId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PointsFor" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="PointsCount" />
+          <Property Type="DateTime" Name="AddedDate" />
+        </EntityType>
+        <ComplexType Name="SumGetUserPoints">
+          <Property Type="Int32" Name="TotalPoints" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListGetAllInterestedSaloonsByUserId">
+          <Property Type="Int32" Name="UserBookedInterestedSaloonId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="SaloonId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image3" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ListGetAllBookedSaloonsByUserId">
+          <Property Type="Int32" Name="UserBookedInterestedSaloonId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="SaloonId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image3" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="BookingDate" Nullable="true" />
+          <Property Type="String" Name="BookingTime" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="ListGetAroundMeSalons">
+          <Property Type="Int32" Name="total" Nullable="true" />
+          <Property Type="Int64" Name="rownum" Nullable="true" />
+          <Property Type="Int32" Name="SaloonId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image2" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image3" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="RecordStatus" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="Distance" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListGetFavouriteDealsCount">
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListGetBookedDealsCount">
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="EntityGetFavouriteDealsCount">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="EntityGetBookedDealsCount">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="EntityGetBookedSalonsCount">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="EntityGetInterestedSalonsCount">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListGetRegisteresUsersCountForAdminDashboard">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="ListGetSalonsGraphForAdmin">
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="Count" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="ListGetDealsGraphForAdmin">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="Newsletter">
+          <Key>
+            <PropertyRef Name="NewsletterId" />
+          </Key>
+          <Property Type="Int32" Name="NewsletterId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="AddedDate" />
+        </EntityType>
+        <ComplexType Name="ListGetNewsLettersForDashboard">
+          <Property Type="Int32" Name="Count" Nullable="true" />
+          <Property Type="String" Name="Address" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="ListGetUserOrderList">
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="Boolean" Name="Booked" Nullable="true" />
+          <Property Type="Boolean" Name="InterestedOrFavourite" Nullable="true" />
+          <Property Type="DateTime" Name="AddedDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="EntityGetDealDetailByIdForService">
+          <Property Type="Int32" Name="DealId" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Image" Nullable="true" MaxLength="250" />
+          <Property Type="Decimal" Name="ActualPrice" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DiscountedPrice" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="SalonName" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SalonEmail" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SalonPhone" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="SalonDescripin" Nullable="true" MaxLength="Max" />
+        </ComplexType>
+        <EntityType Name="AddsManagement">
+          <Key>
+            <PropertyRef Name="AddsManagementId" />
+          </Key>
+          <Property Type="Int32" Name="AddsManagementId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Image1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Position1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Alignment1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Position2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Alignment2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Position3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Alignment3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="StartDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="String" Name="AddStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="PageName" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPublic" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserId" />
+        </EntityType>
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="event_id" />
+          </Key>
+          <Property Type="Int32" Name="event_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="description" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="event_start" />
+          <Property Type="DateTime" Name="event_end" />
+        </EntityType>
+        <EntityType Name="UserMouseTracking">
+          <Key>
+            <PropertyRef Name="UserMouseTrackingId" />
+          </Key>
+          <Property Type="Int32" Name="UserMouseTrackingId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="EntityId" />
+          <Property Type="String" Name="EntityType" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="AddedDate" />
+        </EntityType>
+        <ComplexType Name="GetUserLikeAddsList">
+          <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Image1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Alignment1" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="PageName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="EntityId" Nullable="true" />
+          <Property Type="Int32" Name="Count" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="Deal">
+          <Key>
+            <PropertyRef Name="DealId" />
+          </Key>
+          <Property Type="Int32" Name="DealId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="SaloonId" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsDealOfTheDay" />
+          <Property Type="Boolean" Name="IsFeatured" />
+          <Property Type="String" Name="AreaOfDeal" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Latitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Longitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="ActualPrice" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="DiscountedPrice" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="AddedDate" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="String" Name="RecordStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="AcceptVouchers" />
+        </EntityType>
+        <EntityType Name="Saloon">
+          <Key>
+            <PropertyRef Name="SaloonId" />
+          </Key>
+          <Property Type="Int32" Name="SaloonId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Latitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Longitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="AddedDate" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="String" Name="RecordStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="AcceptVouchers" />
+        </EntityType>
+        <EntityType Name="SystemManager">
+          <Key>
+            <PropertyRef Name="SystemManagerId" />
+          </Key>
+          <Property Type="Int32" Name="SystemManagerId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="SalonId" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Gender" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Role" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="AddedDate" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="String" Name="RecordStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserVoucher">
+          <Key>
+            <PropertyRef Name="UserVoucherId" />
+          </Key>
+          <Property Type="Int32" Name="UserVoucherId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="Points" />
+          <Property Type="Int32" Name="EntityId" />
+          <Property Type="String" Name="EntityType" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Voucher" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="GeneratedDate" />
+        </EntityType>
+        <ComplexType Name="GetUserVouchersList">
+          <Property Type="Int32" Name="UserVoucherId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="true" />
+          <Property Type="Int32" Name="Points" Nullable="true" />
+          <Property Type="Int32" Name="EntityId" Nullable="true" />
+          <Property Type="String" Name="EntityType" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Voucher" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="GeneratedDate" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FacebookId" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Role" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Username" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Password" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Firstname" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Lastname" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Latitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Longitude" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Address" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="State" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Phone" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Facebook" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="About" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Avatar" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="AddedDate" />
+          <Property Type="DateTime" Name="ModifiedDate" />
+          <Property Type="String" Name="RecordStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="DeviceId" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="TotalPoints" />
+        </EntityType>
+        <EntityType Name="Permission">
+          <Key>
+            <PropertyRef Name="PermissionId" />
+          </Key>
+          <Property Type="Int32" Name="PermissionId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Role" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Dashboard" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Users" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Deals" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Directories" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Salons" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Adds" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Points" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SystemManagers" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserBookedInterestedSaloon">
+          <Key>
+            <PropertyRef Name="UserBookedInterestedSaloonId" />
+          </Key>
+          <Property Type="Int32" Name="UserBookedInterestedSaloonId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="SaloonId" />
+          <Property Type="Boolean" Name="IsBooked" />
+          <Property Type="Boolean" Name="IsInterested" />
+          <Property Type="DateTime" Name="AddedDate" />
+          <Property Type="DateTime" Name="BookingDate" />
+          <Property Type="String" Name="BookingTime" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Points" />
+          <Property Type="String" Name="Voucher" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserFavouriteAndBookedDeal">
+          <Key>
+            <PropertyRef Name="UserFavouriteBookedDealId" />
+          </Key>
+          <Property Type="Int32" Name="UserFavouriteBookedDealId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="SalonId" />
+          <Property Type="Int32" Name="DealId" />
+          <Property Type="Boolean" Name="IsFavourite" />
+          <Property Type="Boolean" Name="IsBooked" />
+          <Property Type="DateTime" Name="AddedDate" />
+          <Property Type="Int32" Name="Points" />
+          <Property Type="String" Name="Voucher" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Status" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="MobileAddsManagement">
+          <Key>
+            <PropertyRef Name="MobileAddId" />
+          </Key>
+          <Property Type="Int32" Name="MobileAddId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="AddFor" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image1" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image2" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Image3" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Country" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="DateTime" Name="StartDate" />
+          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="String" Name="AddStatus" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsPublic" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Saloon4KModelStoreContainer" CdmEntityContainer="Saloon4KEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="Saloon4KModel.Category">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IntermediateUsers">
+            <EntityTypeMapping TypeName="Saloon4KModel.IntermediateUser">
+              <MappingFragment StoreEntitySet="IntermediateUsers">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="IntermediateUserId" ColumnName="IntermediateUserId" />
+                <ScalarProperty Name="FacebookId" ColumnName="FacebookId" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="About" ColumnName="About" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SaloonCategories">
+            <EntityTypeMapping TypeName="Saloon4KModel.SaloonCategory">
+              <MappingFragment StoreEntitySet="SaloonCategories">
+                <ScalarProperty Name="SaloonCategoryId" ColumnName="SaloonCategoryId" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllFavouriteDealsByUserId" FunctionName="Saloon4KModel.Store.sp_GetAllFavouriteDealsByUserId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetAllFavouriteDealsByUserId">
+                <ScalarProperty Name="UserFavouriteBookedDealId" ColumnName="UserFavouriteBookedDealId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DealId" ColumnName="DealId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllBookedDealsByUserId" FunctionName="Saloon4KModel.Store.sp_GetAllBookedDealsByUserId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetAllBookedDealsByUserId">
+                <ScalarProperty Name="UserFavouriteBookedDealId" ColumnName="UserFavouriteBookedDealId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DealId" ColumnName="DealId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSaloonCategories" FunctionName="Saloon4KModel.Store.sp_GetSaloonCategories">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.List_GetSaloonCategories">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllSaloonsByCategoryId" FunctionName="Saloon4KModel.Store.sp_GetSaloonsByCategory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListOfGetAllSaloonsByCategoryId">
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Points">
+            <EntityTypeMapping TypeName="Saloon4KModel.Point">
+              <MappingFragment StoreEntitySet="Points">
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="PointsCount" ColumnName="PointsCount" />
+                <ScalarProperty Name="PointsFor" ColumnName="PointsFor" />
+                <ScalarProperty Name="PointsId" ColumnName="PointsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetAllInterestedSaloonsByUserId" FunctionName="Saloon4KModel.Store.sp_GetAllInterestedSaloonsByUserId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetAllInterestedSaloonsByUserId">
+                <ScalarProperty Name="UserBookedInterestedSaloonId" ColumnName="UserBookedInterestedSaloonId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAllBookedSaloonsByUserId" FunctionName="Saloon4KModel.Store.sp_GetAllBookedSaloonsByUserId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetAllBookedSaloonsByUserId">
+                <ScalarProperty Name="UserBookedInterestedSaloonId" ColumnName="UserBookedInterestedSaloonId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="BookingTime" ColumnName="BookingTime" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetAroundMeSalons" FunctionName="Saloon4KModel.Store.spGetAroundMeSalons">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetAroundMeSalons">
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="rownum" ColumnName="rownum" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFavouriteDealsCount" FunctionName="Saloon4KModel.Store.sp_GetTotalFavouritesOfDeal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.EntityGetFavouriteDealsCount">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBookedDealsCount" FunctionName="Saloon4KModel.Store.sp_GetTotalBookingsOfDeal">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.EntityGetBookedDealsCount">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetBookedSalonsCount" FunctionName="Saloon4KModel.Store.sp_GetTotalBookingsOfSaloon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.EntityGetBookedSalonsCount">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetInterestedSalonsCount" FunctionName="Saloon4KModel.Store.sp_GetTotalInterestsOfSaloon">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.EntityGetInterestedSalonsCount">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetRegisteresUsersCountForAdminDashboard" FunctionName="Saloon4KModel.Store.sp_GetRegisteresUsersCountForAdminDashboard">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetRegisteresUsersCountForAdminDashboard">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSalonsGraphForAdmin" FunctionName="Saloon4KModel.Store.sp_GetSalonsGraphForAdmin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetSalonsGraphForAdmin">
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetDealsGraphForAdmin" FunctionName="Saloon4KModel.Store.sp_GetDealsGraphForAdmin">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetDealsGraphForAdmin">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Newsletters">
+            <EntityTypeMapping TypeName="Saloon4KModel.Newsletter">
+              <MappingFragment StoreEntitySet="Newsletters">
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="NewsletterId" ColumnName="NewsletterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetNewsLettersForAdmin" FunctionName="Saloon4KModel.Store.sp_GetNewsLettersBasedOnCountry">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetNewsLettersForDashboard">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetUserOrderList" FunctionName="Saloon4KModel.Store.sp_UserOrderList">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.ListGetUserOrderList">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Booked" ColumnName="Booked" />
+                <ScalarProperty Name="InterestedOrFavourite" ColumnName="InterestedOrFavourite" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetDealDetailByIdForService" FunctionName="Saloon4KModel.Store.sp_GetDealDetailByIdForService">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.EntityGetDealDetailByIdForService">
+                <ScalarProperty Name="DealId" ColumnName="DealId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ActualPrice" ColumnName="ActualPrice" />
+                <ScalarProperty Name="DiscountedPrice" ColumnName="DiscountedPrice" />
+                <ScalarProperty Name="SalonName" ColumnName="SalonName" />
+                <ScalarProperty Name="SalonEmail" ColumnName="SalonEmail" />
+                <ScalarProperty Name="SalonPhone" ColumnName="SalonPhone" />
+                <ScalarProperty Name="SalonDescripin" ColumnName="SalonDescripin" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="AddsManagements">
+            <EntityTypeMapping TypeName="Saloon4KModel.AddsManagement">
+              <MappingFragment StoreEntitySet="AddsManagement">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="AddStatus" ColumnName="AddStatus" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Alignment3" ColumnName="Alignment3" />
+                <ScalarProperty Name="Position3" ColumnName="Position3" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="Alignment2" ColumnName="Alignment2" />
+                <ScalarProperty Name="Position2" ColumnName="Position2" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Alignment1" ColumnName="Alignment1" />
+                <ScalarProperty Name="Position1" ColumnName="Position1" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="AddsManagementId" ColumnName="AddsManagementId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="events">
+            <EntityTypeMapping TypeName="Saloon4KModel.event">
+              <MappingFragment StoreEntitySet="event">
+                <ScalarProperty Name="event_end" ColumnName="event_end" />
+                <ScalarProperty Name="event_start" ColumnName="event_start" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="event_id" ColumnName="event_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserMouseTrackings">
+            <EntityTypeMapping TypeName="Saloon4KModel.UserMouseTracking">
+              <MappingFragment StoreEntitySet="UserMouseTrackings">
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="EntityType" ColumnName="EntityType" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserMouseTrackingId" ColumnName="UserMouseTrackingId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetUserLikeAdds" FunctionName="Saloon4KModel.Store.sp_GetUserLikesOfAdds">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.GetUserLikeAddsList">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Alignment1" ColumnName="Alignment1" />
+                <ScalarProperty Name="PageName" ColumnName="PageName" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Deals">
+            <EntityTypeMapping TypeName="Saloon4KModel.Deal">
+              <MappingFragment StoreEntitySet="Deals">
+                <ScalarProperty Name="AcceptVouchers" ColumnName="AcceptVouchers" />
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="DiscountedPrice" ColumnName="DiscountedPrice" />
+                <ScalarProperty Name="ActualPrice" ColumnName="ActualPrice" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="AreaOfDeal" ColumnName="AreaOfDeal" />
+                <ScalarProperty Name="IsFeatured" ColumnName="IsFeatured" />
+                <ScalarProperty Name="IsDealOfTheDay" ColumnName="IsDealOfTheDay" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DealId" ColumnName="DealId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Saloons">
+            <EntityTypeMapping TypeName="Saloon4KModel.Saloon">
+              <MappingFragment StoreEntitySet="Saloons">
+                <ScalarProperty Name="AcceptVouchers" ColumnName="AcceptVouchers" />
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemManagers">
+            <EntityTypeMapping TypeName="Saloon4KModel.SystemManager">
+              <MappingFragment StoreEntitySet="SystemManagers">
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="SalonId" ColumnName="SalonId" />
+                <ScalarProperty Name="SystemManagerId" ColumnName="SystemManagerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserVouchers">
+            <EntityTypeMapping TypeName="Saloon4KModel.UserVoucher">
+              <MappingFragment StoreEntitySet="UserVouchers">
+                <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+                <ScalarProperty Name="Voucher" ColumnName="Voucher" />
+                <ScalarProperty Name="EntityType" ColumnName="EntityType" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserVoucherId" ColumnName="UserVoucherId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetUserVouchers" FunctionName="Saloon4KModel.Store.sp_GetUserVouchers">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Saloon4KModel.GetUserVouchersList">
+                <ScalarProperty Name="UserVoucherId" ColumnName="UserVoucherId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="EntityType" ColumnName="EntityType" />
+                <ScalarProperty Name="Voucher" ColumnName="Voucher" />
+                <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Saloon4KModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="TotalPoints" ColumnName="TotalPoints" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+                <ScalarProperty Name="RecordStatus" ColumnName="RecordStatus" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="About" ColumnName="About" />
+                <ScalarProperty Name="Facebook" ColumnName="Facebook" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Lastname" ColumnName="Lastname" />
+                <ScalarProperty Name="Firstname" ColumnName="Firstname" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="FacebookId" ColumnName="FacebookId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permissions">
+            <EntityTypeMapping TypeName="Saloon4KModel.Permission">
+              <MappingFragment StoreEntitySet="Permissions">
+                <ScalarProperty Name="SystemManagers" ColumnName="SystemManagers" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="Adds" ColumnName="Adds" />
+                <ScalarProperty Name="Salons" ColumnName="Salons" />
+                <ScalarProperty Name="Directories" ColumnName="Directories" />
+                <ScalarProperty Name="Deals" ColumnName="Deals" />
+                <ScalarProperty Name="Users" ColumnName="Users" />
+                <ScalarProperty Name="Dashboard" ColumnName="Dashboard" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="PermissionId" ColumnName="PermissionId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserBookedInterestedSaloons">
+            <EntityTypeMapping TypeName="Saloon4KModel.UserBookedInterestedSaloon">
+              <MappingFragment StoreEntitySet="UserBookedInterestedSaloons">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Voucher" ColumnName="Voucher" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="BookingTime" ColumnName="BookingTime" />
+                <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="IsInterested" ColumnName="IsInterested" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+                <ScalarProperty Name="SaloonId" ColumnName="SaloonId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserBookedInterestedSaloonId" ColumnName="UserBookedInterestedSaloonId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserFavouriteAndBookedDeals">
+            <EntityTypeMapping TypeName="Saloon4KModel.UserFavouriteAndBookedDeal">
+              <MappingFragment StoreEntitySet="UserFavouriteAndBookedDeals">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Voucher" ColumnName="Voucher" />
+                <ScalarProperty Name="Points" ColumnName="Points" />
+                <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+                <ScalarProperty Name="IsBooked" ColumnName="IsBooked" />
+                <ScalarProperty Name="IsFavourite" ColumnName="IsFavourite" />
+                <ScalarProperty Name="DealId" ColumnName="DealId" />
+                <ScalarProperty Name="SalonId" ColumnName="SalonId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserFavouriteBookedDealId" ColumnName="UserFavouriteBookedDealId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MobileAddsManagements">
+            <EntityTypeMapping TypeName="Saloon4KModel.MobileAddsManagement">
+              <MappingFragment StoreEntitySet="MobileAddsManagement">
+                <ScalarProperty Name="IsPublic" ColumnName="IsPublic" />
+                <ScalarProperty Name="AddStatus" ColumnName="AddStatus" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Image3" ColumnName="Image3" />
+                <ScalarProperty Name="Image2" ColumnName="Image2" />
+                <ScalarProperty Name="Image1" ColumnName="Image1" />
+                <ScalarProperty Name="AddFor" ColumnName="AddFor" />
+                <ScalarProperty Name="MobileAddId" ColumnName="MobileAddId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="Saloon4KModel.Category" Width="1.5" PointX="0.5" PointY="0.5" Height="2.3648893229166665" IsExpanded="true" />
+        <EntityTypeShape EntityType="Saloon4KModel.IntermediateUser" Width="1.5" PointX="2.375" PointY="0.5" Height="4.8648079427083326" IsExpanded="true" />
+        <EntityTypeShape EntityType="Saloon4KModel.SaloonCategory" Width="1.5" PointX="6" PointY="0.5" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="Saloon4KModel.Point" Width="1.5" PointX="6" PointY="2.5" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="Saloon4KModel.Newsletter" Width="1.5" PointX="7.75" PointY="3.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="Saloon4KModel.AddsManagement" Width="1.5" PointX="2.375" PointY="5.5" Height="4.2879036458333335" />
+        <EntityTypeShape EntityType="Saloon4KModel.event" Width="1.5" PointX="9.5" PointY="0.5" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Saloon4KModel.UserMouseTracking" Width="1.5" PointX="6" PointY="4.5" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="Saloon4KModel.Deal" Width="1.5" PointX="11.375" PointY="0.5" Height="4.8648079427083388" />
+        <EntityTypeShape EntityType="Saloon4KModel.Saloon" Width="1.5" PointX="9.5" PointY="5.375" Height="4.6725065104166674" />
+        <EntityTypeShape EntityType="Saloon4KModel.SystemManager" Width="1.5" PointX="0.5" PointY="3" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="Saloon4KModel.UserVoucher" Width="1.5" PointX="9.5" PointY="2.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="Saloon4KModel.User" Width="1.5" PointX="4.125" PointY="0.5" Height="5.2494108072916674" />
+        <EntityTypeShape EntityType="Saloon4KModel.Permission" Width="1.5" PointX="6.375" PointY="7.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="Saloon4KModel.UserBookedInterestedSaloon" Width="1.5" PointX="0.75" PointY="10.75" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="Saloon4KModel.UserFavouriteAndBookedDeal" Width="1.5" PointX="2.75" PointY="10.75" Height="2.9417936197916674" />
+        <EntityTypeShape EntityType="Saloon4KModel.MobileAddsManagement" Width="1.5" PointX="5.375" PointY="11.75" Height="3.1340950520833388" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

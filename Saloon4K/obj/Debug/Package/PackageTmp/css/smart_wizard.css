@@ -1,0 +1,198 @@
+.ulTabs
+{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 solid #CCCCCC;
+    clear: both;
+    display: block;
+    float: left;
+    list-style: none outside none;
+    margin: 10px 0;
+    padding: 0;
+    position: relative;
+}
+.ulTabs li
+{
+    border: 0 solid #E0E0E0;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0 3px;
+    position: relative;
+}
+.ulTabs li a
+{
+    background: none repeat scroll 0 0 #E12861;
+    border: 1px solid #E12861;
+    box-shadow: 5px 5px 8px #888888;
+    color: #F8F8F8;
+    cursor: pointer;
+    float: left;
+    height: 60px;
+    width: 238px;
+}
+.ulTabs li a label
+{
+    float: left;
+    font-size: 40px;
+    padding: 0 5px 5px;
+    position: relative;
+    text-align: center;
+    width: 30px;
+}
+.ulTabs li a span
+{
+    display: block;
+    float: left;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 5px;
+    position: relative;
+    text-align: left;
+}
+.stepActive
+{
+    background: none repeat scroll 0 0 #8CC63F !important;
+    border: 1px solid #8CC63F !important;
+    box-shadow: 5px 5px 8px #888888 !important;
+    color: #F8F8F8 !important;
+    cursor: pointer !important;
+    float: left !important;
+    height: 60px !important;
+    width: 238px !important;
+}
+.tabArea
+{
+    display: none;
+    clear: both;
+    float: left;
+    width: 97%;
+    margin-left: 4px;
+}
+.selectButton
+{
+    width: 100%;
+    margin-top: 45px;
+    float: left;
+    margin-bottom: 25px;
+}
+
+.selectButton input[type="submit"]
+{
+    background-color: #DE2960;
+    border: medium none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    float: left;
+    height: 50px;
+    margin-left: 11px;
+    padding: 5px;
+    width: 125px;
+}
+
+.selectButton input[type="submit"]:hover
+{
+    background-color: #E24D80;
+    border: medium none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    float: left;
+    height: 50px;
+    margin-left: 11px;
+    padding: 5px;
+    width: 125px;
+}
+
+.wizardButtons
+{
+    width: 100%;
+    clear: both;
+    float: left;
+    text-align: center;
+}
+.wizardButtons input[type="submit"]
+{
+    background-color: #8CC63F;
+    border: medium none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    height: 35px;
+    padding: 5px;
+    width: 115px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.wizardButtons input[type="submit"]:hover
+{
+    background-color: #B4DF87;
+    border: medium none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    height: 35px;
+    padding: 5px;
+    width: 115px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+.wizardUsers
+{
+    width: 100%;
+    clear: both;
+    float: left;
+    text-align: center;
+    margin-top: 25px;
+}
+.wizardUsers label
+{
+    margin-left: 5px;
+    margin-right: 35px;
+}
+.divCountryFlags
+{
+    width: 100%;
+    clear: both;
+    float: left;
+    text-align: center;
+    margin-top: 25px;
+    height: 190px;
+}
+
+.divCountryFlags input[type="image"]
+{
+    /*margin-left: 50px;     margin-top: 16px;*/
+    width: 120px;
+}
+.btnPageActive
+{
+    background-color: #8CC63F !important;
+    border: medium none;
+    border-radius: 2px;
+    color: #FFFFFF;
+    float: left;
+    height: 50px;
+    margin-left: 23px;
+    padding: 5px;
+    width: 135px;
+}
+.btnCountryFlagActive
+{
+    border: 2px dotted #E12861;
+    border-radius: 5px;
+}
+.divflag
+{
+    float: left;
+    text-align: center;
+    width: 155px;
+}
+.divflag span
+{
+    clear: both;
+    /*float: left;*/
+}
+.divflag input[type="image"]
+{
+    /*float: left;*/
+}
+

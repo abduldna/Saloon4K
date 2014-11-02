@@ -1,0 +1,459 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Saloon4K.Site" %>
+
+<%@ Import Namespace="Saloon4kBLL" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>Saloon 4k</title>
+    <!--Styles-->
+    <link rel="shortcut icon" href="http://localhost:64196/images/favicon.png" />
+    <link href="http://localhost:64196/css/normalise.css" type="text/css" rel="stylesheet" />
+    <link href="http://localhost:64196/css/bravado.css" type="text/css" rel="stylesheet" />
+    <link href="http://localhost:64196/css/flexslider.css" type="text/css" rel="stylesheet" />
+    <link href="http://localhost:64196/css/jquery.timepicker.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:64196/css/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="http://localhost:64196/css/Transition.css" rel="stylesheet" type="text/css" />
+    <link href="css/Country/default.css" rel="stylesheet" type="text/css" />
+    <link href="css/Country/style2.css" rel="stylesheet" type="text/css" />
+    <!--Scripts-->
+    <script src="http://localhost:64196/js/jquery.min.js" type="text/javascript"></script>
+    <script src="http://localhost:64196/js/html5.js" type="text/javascript"></script>
+    <script src="http://localhost:64196/js/jquery.bpopup.min.js" type="text/javascript"></script>
+    <script src="http://localhost:64196/js/jquery-ui.js" type="text/javascript"></script>
+    <script src="http://localhost:64196/js/jquery.timepicker.js" type="text/javascript"></script>
+    <script src="js/Country/modernizr.custom.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#lnklogin").click(function () {
+                $("#loginform").slideDown();
+            });
+            $("#closebtn").click(function () {
+                $("#loginform").slideUp();
+            });
+            window.setInterval("closeMessage();", 136000);
+            $("#lnklogin").click(function () {
+                $("#loginform").slideDown();
+            });
+            $("#closebtn").click(function () {
+                $("#loginform").slideUp();
+            });
+
+        });
+        function showFlag() {
+            $("#lnkUAE").show("slow");
+        }
+        function hideFlag() {
+            $("#lnkUAE").hide("slow");
+        }
+        function ShowDivNewsletter() {
+            $('#divNewsletter').bPopup({
+                onOpen: function () {
+                },
+                onClose: function () {
+                }
+            });
+            $('#<%=upNewsletters.ClientID %>').parent().appendTo($("form:first"));
+        }
+        function closeMessage() {
+            $(".msgSuccess").slideUp("slow", null);
+            $(".msgError").slideUp("slow", null);
+        }
+
+        var inserted = 0;
+        function MouseTracking(id) {
+            var timer;
+            $("#" + id).mouseenter(function () {
+                var hf = "#" + id + "hf";
+                var hfValue = $(hf).val();
+                var userId = 1;
+                var entityId = 1;
+                var entityType = 'PopUp';
+                if (hfValue != null && hfValue != "") {
+                    var splitArray = hfValue.split(',');
+                    userId = splitArray[0];
+                    entityId = splitArray[1];
+                    entityType = splitArray[2].replace(' ', '');
+                }
+                timer = setTimeout(function () {
+                    if (inserted == 0) {
+                        if (hfValue != null && hfValue != "") {
+                            $.ajax({
+                                url: 'http://localhost:64196/Home.aspx/MouseTracking',
+                                data: "{ 'userId': '" + userId + "','entityId': '" + entityId + "','entityType': '" + entityType + "'}",
+                                dataType: "json",
+                                type: "POST",
+                                contentType: "application/json; charset=utf-8",
+                                success: function () {
+                                    inserted = 1;
+                                    alert("Add Added Successfuly!");
+                                },
+                                error: function () {
+                                    alert("No result found.");
+                                },
+                                failure: function () {
+                                    alert("No result found.");
+                                }
+                            });
+                        }
+                    }
+                }, 1000);
+            }).mouseleave(function () {
+                clearTimeout(timer);
+            });
+        }      
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div>
+        <div class="logincontainer" id="loginform">
+            <asp:UpdatePanel runat="server" ID="upLogin">
+                <ContentTemplate>
+                    <div id="divMessage" runat="server" visible="False">
+                    </div>
+                    <div class="logininner">
+                        <ul class="sociallogin">
+                            <li>
+                                <div class="fb-login-button" autologoutlink="true" scope="user_birthday,email">
+                                    Login with Facebook
+                                </div>
+                                <%--<img src="~/images/fb.png" alt="Facebook" runat="server" />--%>
+                            </li>
+                        </ul>
+                        <div class="loginform">
+                            <div class="logincol">
+                                <div class="label">
+                                    Username</div>
+                                <asp:TextBox ID="txtUsername" runat="server" CssClass="loginput" Placeholder="Username"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rftxtUsername" ControlToValidate="txtUsername"
+                                    ErrorMessage="*" Display="Dynamic" ValidationGroup="Login">                                    
+                                </asp:RequiredFieldValidator>
+                            </div>
+                            <div class="logincol">
+                                <div class="label">
+                                    Username</div>
+                                <asp:TextBox ID="txtPassword" runat="server" CssClass="loginput" Placeholder="Password"></asp:TextBox>
+                                <asp:RequiredFieldValidator runat="server" ID="rftxtPassword" ControlToValidate="txtPassword"
+                                    ErrorMessage="*" Display="Dynamic" ValidationGroup="Login">                                    
+                                </asp:RequiredFieldValidator>
+                                <div class="label">
+                                    <a href="javascript:void(0);">Forgot Password</a></div>
+                            </div>
+                            <div class="logincol">
+                                <asp:Button ikd="btnLogin" runat="server" CssClass="logbtn" Text="LOGIN" OnClick="btnLogin_Click"
+                                    ValidationGroup="Login" />
+                            </div>
+                            <div class="close floatLeft">
+                                <a id="closebtn" href="javascript:void(0);">
+                                    <img src="~/images/close.png" alt="close" runat="server" /></a></div>
+                        </div>
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <div class="header">
+            <div class="headercontainer">
+                <div class="logo">
+                    <a href="~/Home.aspx" runat="server">
+                        <img src="~/images/salon4k.png" alt="SALON 4K" runat="server" /></a>
+                </div>
+                <div id="location-switch" style="padding: 5px;">
+                    <asp:Label runat="server" ID="lblCountry"></asp:Label>
+                </div>
+                <div class="accountarea">
+                    <asp:UpdatePanel runat="server" ID="upPoints" UpdateMode="Conditional">
+                        <ContentTemplate>
+                            <div class="points" id="divPoints" runat="server" visible="False">
+                            </div>
+                            <a id="lnklogin" runat="server" href="javascript:void(0);" class="accountname anc floatRight"
+                                title="LOGIN">LOGIN</a> <a id="lnkRegister" runat="server" href="~/Register.aspx"
+                                    style="margin-right: 5px;" class="accountname anc floatRight" title="REGISTER">REGISTER</a>
+                            <a id="lnkProfile" runat="server" href="javascript:void(0);" class="accountname anc floatLeft mleft"
+                                visible="False"></a>
+                            <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogout_Click" CssClass="accountname anc floatLeft mleft"
+                                ToolTip="LOGOUT" Visible="False">LOGOUT</asp:LinkButton>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:PostBackTrigger ControlID="lnkLogout" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+            <div class="navigation">
+                <div class="navmenubar">
+                    <ul id="menu">
+                        <li id="liHome" runat="server"><a href="~/Home.aspx" id="lnkHome" runat="server"><span>
+                            HOME</span></a> </li>
+                        <li><a href="~/Deals.aspx" id="lnkDeals" runat="server">DEALS</a></li>
+                        <li><a href="~/Directory.aspx" id="lnkDirectory" runat="server">DIRECTORY</a> </li>
+                        <li><a href="~/UserAccount/MyAccount.aspx" id="lnkMySaloon4K" runat="server">MY SALON
+                            4K</a> </li>
+                        <li><a href="~/AboutUs.aspx" id="lnkAboutUs" runat="server">ABOUT US</a> </li>
+                        <li><a href="~/ContactUs.aspx" id="lnkContactUs" runat="server">CONTACT US</a> </li>
+                    </ul>
+                    <ul class="sociali">
+                        <a href="" target="_blank">
+                            <li class="fb"><span>facebook</span></li>
+                        </a><a href="javascript:void(0);" target="_blank">
+                            <li class="twit"><span>Twitter</span></li>
+                        </a><a href="javascript:void(0);" target="_blank">
+                            <li class="gplus"><span>Linkedin</span></li>
+                        </a><a href="javascript:void(0);" target="_blank">
+                            <li class="utube"><span>youtube</span></li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+            <div class="banner" id="divSlider" runat="server">
+                <div class="flexslider">
+                    <section class="slider">
+                        <ul class="slides">
+                            <li>
+                                <asp:Image runat="server" ID="bannerImage1" CssClass="sliderImage" onmouseenter="MouseTracking(this.id);" />
+                                <asp:HiddenField runat="server" ID="bannerImage1hf" Value="" />
+                            </li>
+                            <li>
+                                <asp:Image runat="server" ID="bannerImage2" CssClass="sliderImage" onmouseenter="MouseTracking(this.id);" />
+                                <asp:HiddenField runat="server" ID="bannerImage2hf" Value="" />
+                            </li>
+                            <li>
+                                <asp:Image runat="server" ID="bannerImage3" CssClass="sliderImage" onmouseenter="MouseTracking(this.id);" />
+                                <asp:HiddenField runat="server" ID="bannerImage3hf" Value="" />
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="body" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="footer">
+            <div class="footercontainer">
+                <ul class="footerlinks">
+                    <li><a href="~/AboutUs.aspx" runat="server">company info</a></li>
+                    <li><a href="javascript:void(0);">company profile</a></li>
+                    <li><a href="~/ContactUs.aspx" runat="server">contact us</a></li>
+                    <li><a href="~/AddManagement.aspx" runat="server">Add Management</a></li>
+                    <li>
+                        <asp:LinkButton runat="server" ID="lnkNewsletter" OnClick="lnkNewsletter_Click">Subscribe</asp:LinkButton></li>
+                </ul>
+                <div class="copyright">
+                    Copyright@2014 | SALON 4K</div>
+            </div>
+        </div>
+        <div id="divNewsletter" class="popUpNewsletter" style="display: none;">
+            <asp:UpdatePanel runat="server" ID="upNewsletters">
+                <ContentTemplate>
+                    <h3>
+                        Subscribe for our Newsletter</h3>
+                    <div>
+                        <div>
+                            <input id="addressinput" type="text" style="width: 565px; padding: 4px; float: left;
+                                margin-left: 10px;" />
+                            <input id="btnFindAddress" type="button" value="Find" onclick="return btnFindAddress_onclick()"
+                                class="searchbtn" style="background-color: #CE2357; float: left; margin-left: 15px;
+                                width: 80px;" />
+                        </div>
+                        <div id="divMap" style="background-color: #E5E3DF; height: 250px; margin-bottom: 15px;
+                            margin-left: 10px; overflow: hidden; position: relative; width: 660px; margin-top: 15px;">
+                        </div>
+                        <script type="text/javascript">
+                            var map;
+                            var geocoder;
+                            function InitializeMap() {
+                                var latlng = new window.google.maps.LatLng(25.091196, 55.15538);
+                                var myOptions =
+                                {
+                                    zoom: 15,
+                                    center: latlng,
+                                    mapTypeId: window.google.maps.MapTypeId.ROADMAP,
+                                    disableDefaultUI: true
+
+                                };
+                                map = new window.google.maps.Map(document.getElementById("divMap"), myOptions);
+                                var marker = new window.google.maps.Marker
+                                (
+                                    {
+                                        position: new window.google.maps.LatLng(25.091196, 55.15538),
+                                        map: map,
+                                        title: 'View Details',
+                                        draggable: true
+                                    }
+                                );
+                                var infowindow = new window.google.maps.InfoWindow({
+                                    content: 'Location info:<br/>Country Name:<br/>LatLng:'
+                                });
+                                window.google.maps.event.addListener(marker, 'click', function () {
+                                    // Calling the open method of the infoWindow 
+                                    infowindow.open(map, marker);
+                                });
+                            }
+
+                            function FindLocaiton() {
+                                geocoder = new window.google.maps.Geocoder();
+                                InitializeMap();
+
+                                var address = document.getElementById("addressinput").value;
+                                geocoder.geocode({ 'address': address }, function (results, status) {
+                                    if (status == window.google.maps.GeocoderStatus.OK) {
+                                        map.setCenter(results[0].geometry.location);
+                                        var marker = new window.google.maps.Marker({
+                                            map: map,
+                                            position: results[0].geometry.location
+                                        });
+                                        var region;
+                                        var loc = [];
+
+                                        if (results[0].formatted_address) {
+                                            //Get formated address
+                                            region = results[0].formatted_address;
+                                            //Get latitude longitude values
+                                            loc[0] = results[0].geometry.location.lat();
+                                            loc[1] = results[0].geometry.location.lng();
+                                        }
+                                        var infowindow = new window.google.maps.InfoWindow({
+                                            content: '<div style =width:400px; height:400px;>Location info:<br/>Country Name:<br/>' + region + '<br/>LatLng:<br/>' + results[0].geometry.location + '</div>'
+                                        });
+                                        window.google.maps.event.addListener(marker, 'click', function () {
+                                            // Calling the open method of the infoWindow 
+                                            infowindow.open(map, marker);
+                                        });
+                                        jQuery("#txtAddress").val(region);
+                                        if (results[0].address_components.length > 0) {
+                                            for (var i = 0; i < results[0].address_components.length; i++) {
+                                                var addr = results[0].address_components[i];
+                                                var getCountry;
+                                                if (addr.types[0] == 'country') {
+                                                    getCountry = addr.long_name;
+                                                    jQuery("#txtCountry").val(getCountry);
+                                                }
+                                                else if (addr.types[0] == 'locality') {
+                                                    getCountry = addr.long_name;
+                                                    jQuery("#txtCity").val(getCountry);
+                                                }
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        alert("Geocode was not successful for the following reason: " + status);
+                                    }
+                                });
+                            }
+
+                            function btnFindAddress_onclick() {
+                                FindLocaiton();
+                            }
+                            window.onload = InitializeMap;
+                        </script>
+                    </div>
+                    <div class="mtop10 mleft120">
+                        <span>Email:</span>
+                        <asp:TextBox runat="server" ID="txtEmail"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rftxtEmail" ErrorMessage="*" ValidationGroup="Newsletter"
+                            ControlToValidate="txtEmail" Display="Dynamic" CssClass="newsletterError"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="mtop10 mleft120">
+                        <span>Address:</span>
+                        <asp:TextBox runat="server" ID="txtAddress"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rftxtAddress" ErrorMessage="*" ValidationGroup="Newsletter"
+                            ControlToValidate="txtAddress" Display="Dynamic" CssClass="newsletterError"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="mtop10 mleft120">
+                        <span>City:</span>
+                        <asp:TextBox runat="server" ID="txtCity"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rftxtCity" ErrorMessage="*" ValidationGroup="Newsletter"
+                            ControlToValidate="txtCity" Display="Dynamic" CssClass="newsletterError"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="mtop10 mleft120">
+                        <span>Country:</span>
+                        <asp:TextBox runat="server" ID="txtCountry"></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="rftxtCountry" ErrorMessage="*" ValidationGroup="Newsletter"
+                            ControlToValidate="txtCountry" Display="Dynamic" CssClass="newsletterError"></asp:RequiredFieldValidator>
+                    </div>
+                    <div class="mtop10 mleft120">
+                        <span>&nbsp;</span>
+                        <asp:Button runat="server" ID="btnNewsletter" Text="SUBSCRIBE" CssClass="btnNewsletter"
+                            ValidationGroup="Newsletter" OnClick="btnNewsletter_Click" />
+                    </div>
+                </ContentTemplate>
+            </asp:UpdatePanel>
+        </div>
+        <script src="http://localhost:64196/js/jquery.flexslider.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $('.flexslider').flexslider({
+                    animation: "slide",
+                    controlNav: "false"
+                });
+            });
+        </script>
+        <script src="http://localhost:64196/js/jquery.easing.js" type="text/javascript"></script>
+        <script src="http://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#lnkLogout").click(function () {
+                    FB.logout(function (response) {
+                        RedirectPage();
+                    });
+
+                });
+            });
+            // Initialize the SDK upon load
+            FB.init({
+                appId: '700158636700828', // App ID
+                channelUrl: '//' + window.location.hostname + '/channel', // Path to your Channel File
+                scope: 'id,first_name,last_name,gender,user_birthday,email', // This to get the user details back from Facebook
+                status: true, // check login status
+                cookie: true, // enable cookies to allow the server to access the session
+                xfbml: true  // parse XFBML
+            });
+            var autho = '<%=UserSession.Current.IsUserAuthenticated %>';
+            if (autho == 'False') {
+                // listen for and handle auth.statusChange events
+                FB.Event.subscribe('auth.statusChange', OnLogin);
+            }
+
+            // This method will be called after the user login into facebook.
+            function OnLogin(response) {
+                if (response.authResponse) {
+                    FB.api('/me?fields=id,first_name,last_name,gender,email,birthday', LoadValues);
+                }
+            }
+
+            //This method will load the values to the labels
+            function LoadValues(me) {
+                if (me.first_name) {
+                    var firstname = me.first_name == 'undefined' ? "" : me.first_name;
+                    var lastname = me.last_name == 'undefined' ? "" : me.last_name;
+                    var fbId = me.id == 'undefined' ? "" : me.id;
+                    var email = me.email == 'undefined' ? "" : me.email;
+                    var gender = me.gender == 'undefined' ? "" : me.gender;
+                    var birthday = me.birthday == 'undefined' ? "" : me.birthday;
+                    jQuery.ajax({
+                        type: "POST",
+                        url: "http://localhost:64196/Default.aspx/LoginFb",
+                        data: "{'firstname':'" + firstname + "','lastname':'" + lastname + "','fbId':'" + fbId + "','email':'" + email + "','gender':'" + gender + "','birthday':'" + birthday + "'}",
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (msg) {
+                            if (msg.d == "GOOD") {
+                                RedirectPage();
+                            }
+                        }
+                    });
+                }
+            }
+
+            function RedirectPage() {
+                window.location.reload();
+            }
+        </script>
+    </div>
+    </form>
+</body>
+</html>

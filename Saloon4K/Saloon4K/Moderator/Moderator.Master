@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Moderator.master.cs"
+    Inherits="Saloon4K.Moderator.Moderator" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Salon 4K</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/plugins/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/jquery-migrate.min.js"></script>
+    <script type="text/javascript" src="js/plugins/jquery/globalize.js"></script>
+    <script type="text/javascript" src="js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script type="text/javascript" src="js/plugins/uniform/jquery.uniform.min.js"></script>
+    <script src="js/jquery.bpopup-0.7.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.setInterval("closeMessage();", 6000);
+        });
+        function closeMessage() {
+            $(".msgSuccess").slideUp("slow", null);
+            $(".msgError").slideUp("slow", null);
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="wall-num11">
+    <%--<body class="bg-img-num1">--%>
+    <form id="form1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="container container-fixed">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar brb" role="navigation">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="~/Home.aspx" runat="server" target="_blank">
+                            <img src="~/images/salon4k.png" alt="logo" runat="server" style="width: 230px; margin-top: 10px;" /></a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="~/Moderator/Home.aspx" runat="server" title="Dashboard"><span class="icon-home">
+                            </span>Dashboard</a></li>
+                            <li><a href="~/Moderator/UserManagement.aspx" runat="server"><span class="icon-globe">
+                            </span>Users</a></li>
+                            <li><a href="~/Moderator/SearchDeals.aspx" runat="server"><span class="icon-globe"></span>
+                                Deals</a></li>
+                            <li><a href="~/Moderator/CategoriesManagement.aspx" runat="server"><span class="icon-edit">
+                            </span>Directories</a></li>
+                            <li><a href="~/Moderator/SearchSalons.aspx" runat="server"><span class="icon-globe">
+                            </span>Salons</a></li>
+                            <li><a href="~/Moderator/AddsSearch.aspx" runat="server"><span class="icon-money"></span>
+                                Adds</a></li>
+                            <li><a href="~/Moderator/PointsManagement.aspx" runat="server"><span class="icon-money">
+                            </span>Points</a></li>
+                            <li>
+                                <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogout_Click"><span class="icon-user"></span>Logout</asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <asp:ContentPlaceHolder ID="cmsBody" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
