@@ -25,7 +25,7 @@
                 <p>
                     
                     Lorem ipsum dolor sit amet, consectetur<br>
-                    adipiscing elit. Nam ullamcorper lacinia . Wakeel 
+                    adipiscing elit. Nam ullamcorper lacinia . Wakee
                 </p>
                 <h4 class="phone">
                     TELEPHONE</h4>
