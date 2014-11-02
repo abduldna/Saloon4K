@@ -24,7 +24,7 @@
                     ADDRESS</h4>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur<br>
-                    adipiscing elit. Nam ullamcorper lacinia . Wakeel Ahmed
+                    adipiscing elit. Nam ullamcorper lacinia . Wakeel
                 </p>
                 <h4 class="phone">
                     TELEPHONE</h4>
