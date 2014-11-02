@@ -28,3 +28,9 @@ E:\BravedoMedia\Projects\Saloon4K\Saloon4kBLL\bin\Debug\Saloon4kBLL.pdb
 E:\BravedoMedia\Projects\Saloon4K\Saloon4kBLL\obj\Debug\Saloon4kBLL.dll
 E:\BravedoMedia\Projects\Saloon4K\Saloon4kBLL\obj\Debug\Saloon4kBLL.pdb
 E:\BravedoMedia\Projects\Saloon4K\Saloon4kBLL\obj\Debug\Saloon4kBLL.csprojResolveAssemblyReference.cache
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4kBLL\bin\Debug\Saloon4kBLL.dll.config
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4kBLL\bin\Debug\Saloon4kBLL.dll
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4kBLL\bin\Debug\Saloon4kBLL.pdb
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4kBLL\obj\Debug\Saloon4kBLL.csprojResolveAssemblyReference.cache
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4kBLL\obj\Debug\Saloon4kBLL.dll
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4kBLL\obj\Debug\Saloon4kBLL.pdb

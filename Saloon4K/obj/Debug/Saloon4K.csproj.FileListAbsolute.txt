@@ -40,3 +40,11 @@ E:\BravedoMedia\Projects\Saloon4K\Saloon4K\bin\Saloon4kBLL.pdb
 E:\BravedoMedia\Projects\Saloon4K\Saloon4K\obj\Debug\Saloon4K.csprojResolveAssemblyReference.cache
 E:\BravedoMedia\Projects\Saloon4K\Saloon4K\obj\Debug\Saloon4K.dll
 E:\BravedoMedia\Projects\Saloon4K\Saloon4K\obj\Debug\Saloon4K.pdb
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\bin\Saloon4K.dll
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\bin\Saloon4K.pdb
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\bin\Saloon4kBLL.dll
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\bin\Newtonsoft.Json.dll
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\bin\Saloon4kBLL.pdb
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\obj\Debug\Saloon4K.csprojResolveAssemblyReference.cache
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\obj\Debug\Saloon4K.dll
+C:\Bravado\Wakeel\GitHub\Saloon4K\Saloon4K\obj\Debug\Saloon4K.pdb
